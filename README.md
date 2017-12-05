@@ -13,7 +13,7 @@ https://angular.io/docs
 ## Example 
 
 ```bash
-$ git clone http://172.16.6.230//IS09/web.git
+$ git clone http://$ipaddress/IS09/web.git
 ```
 
 ## Build
