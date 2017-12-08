@@ -1,0 +1,15 @@
+<content class="host">
+  <h2>商品一覧</h2>
+  <div class="item-wrapper">
+    <div  *ngFor="let product of products" class="item">
+      <a routerLink="/products/{{product.id}}">
+        <img src="{{product.image_url}}">
+      </a>
+      <a routerLink="/products/{{product.id}}">
+        <span class="product-name">{{product.id}}</span>
+      </a>
+      <span class="product-overview">{{product.name}}</span>
+    </div>
+    <span class="flex-space"></span>
+  </div>
+</content>

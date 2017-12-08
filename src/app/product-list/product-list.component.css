@@ -1,0 +1,45 @@
+.host {
+    display       : flex;
+    flex-direction: column;
+    margin        : 90px 80px 0 80px;
+}
+
+h2 {
+    text-align: center;
+}
+
+.item-wrapper {
+    display        : flex;
+    flex-wrap      : wrap-reverse;
+    justify-content: center;
+}
+
+img {
+    background-position: center;
+    background-repeat  : no-repeat;
+    background-size    : cover;
+    max-width          : 250px;
+    max-height         : 200px;
+}
+
+
+.item {
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+
+}
+
+.product-information {
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.product-name {
+    font-size: 1.2rem;
+}
+
+.product-overview {
+
+}

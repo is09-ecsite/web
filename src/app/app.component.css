@@ -1,0 +1,26 @@
+header {
+    align-items: center;
+    background-color: #5EC84E;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,.3);
+    color: white;
+    display: flex;
+    height: 52px;
+    padding: 0 20px;
+    position: fixed;
+    top: 0;
+    width: 100vw;
+}
+
+header > :nth-child(1) {
+    flex-grow: 1;
+    font-family: cursive;
+    font-size: 1.7rem;
+}
+
+header > :nth-child(2) {
+    
+}
+
+.content {
+    margin-top: 52px;
+}
