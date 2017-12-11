@@ -16,6 +16,7 @@ import { CartComponent } from './cart/cart.component';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { SettlementComponent } from './settlement/settlement.component';
 import { ProductService } from './service/product.service';
+import { CartService } from './cart.service';
 
 
 @NgModule({
@@ -41,7 +42,7 @@ import { ProductService } from './service/product.service';
     SignInComponent,
     SettlementComponent
   ],
-  providers: [ProductService],
+  providers: [ProductService, CartService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -4,6 +4,9 @@
     font-family: sans-serif;
     font-weight: initial;
 }
+*:focus {
+    outline: none;
+}
 
 body {
     background-color: #fafbfd;
@@ -13,3 +16,4 @@ a {
     text-decoration: none;
     color: #333;
 }
+
