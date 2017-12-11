@@ -1,0 +1,9 @@
+.host {
+    height: 100%;
+}
+
+iframe {
+    border: none;
+    height: calc(100vh - 52px);
+    width : 100vw;
+}

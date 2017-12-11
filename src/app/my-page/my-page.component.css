@@ -1,0 +1,14 @@
+.host {
+    align-items   : center;
+    display       : flex;
+    flex-direction: column;
+    margin        : 90px 80px 0 80px;
+}
+
+.main-state {
+    display: flex;
+}
+
+.purchase-history {
+    display: flex;
+}

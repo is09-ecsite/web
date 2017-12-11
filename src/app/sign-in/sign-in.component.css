@@ -1,0 +1,39 @@
+.host {
+    align-items    : center;
+    display        : flex;
+    flex-direction : column;
+    height         : calc(100vh - 90px);
+    justify-content: center;
+    margin         : 90px 80px 0 80px;
+    top            : 52px;
+}
+
+.sign-in-box {
+    box-shadow      : 0 0 4px rgba(0,0,0,0.12), 0 2px 4px rgba(0,0,0,0.24);
+    border-radius   : 2px;
+    padding         : 20px 40px;
+}
+
+.git-code {
+    align-items    : center;
+    display        : flex;
+    justify-content: center;
+}
+
+.submit-area {
+    display: flex;
+}
+
+.flexible-space {
+    flex-grow: 1;
+}
+
+input[type="text"]:first-child,
+input[type="text"]:last-child {
+    margin-left : 0;
+    margin-right: 0;
+}
+
+input[type="text"] {
+    margin: 12px;
+}

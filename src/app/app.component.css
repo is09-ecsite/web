@@ -8,7 +8,7 @@ header {
     padding: 0 20px;
     position: fixed;
     top: 0;
-    width: 100vw;
+    width: calc(100vw - 40px);
 }
 
 header > :nth-child(1) {

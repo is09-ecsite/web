@@ -39,7 +39,7 @@ import { ProductService } from './service/product.service';
     MyPageComponent,
     CartComponent,
     SignInComponent,
-    SettlementComponent,
+    SettlementComponent
   ],
   providers: [ProductService],
   bootstrap: [AppComponent]

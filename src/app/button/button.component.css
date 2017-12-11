@@ -1,19 +1,27 @@
 div {
-    align-items: center;
-    color: white;
-    cursor: pointer;
-    background-color: rgba(106, 140, 199, 1);
-    border-radius: 4px;
-    display: inline-flex;
-    font-size: 1rem;
-    height: 32px;
-    justify-content: center;
-    transition: all .2s ease-out;
-    width: 62px;
+    align-items        : center;
+    background-color   : rgba(106, 140, 199, 1);
+    border-radius      : 4px;
+    color              : white;
+    cursor             : pointer;
+    display            : inline-flex;
+    font-size          : 1rem;
+    height             : 32px;
+    justify-content    : center;
+    min-width          : 62px;
+    padding            : 0 12px;
+    transition         : all .2s ease-out;
+    -ms-user-select    : none;
+    -webkit-user-select: none;
+    -moz-user-select   : none;  
 }
 
 div:hover {
-    background-color: rgba(106, 140, 199, 0.9);
-    border-radius: 2px;
-    box-shadow: 0 0 4px rgba(0,0,0,0.12), 0 2px 4px rgba(0,0,0,0.24);
+    background-color: rgba(127, 158, 208, 1);
+    border-radius   : 2px;
+    box-shadow      : 0 0 4px rgba(0,0,0,0.12), 0 2px 4px rgba(0,0,0,0.24);
+}
+
+div:active {
+    background-color: rgba(149, 175, 218, 1);
 }

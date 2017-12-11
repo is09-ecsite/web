@@ -2,13 +2,15 @@
   <h2>商品一覧</h2>
   <div class="item-wrapper">
     <div  *ngFor="let product of products" class="item">
-      <a routerLink="/products/{{product.id}}">
+      <a class="img-wrapper" routerLink="/products/{{product.id}}">
         <img src="{{product.image_url}}">
       </a>
-      <a routerLink="/products/{{product.id}}">
-        <span class="product-name">{{product.id}}</span>
-      </a>
-      <span class="product-overview">{{product.name}}</span>
+      <div class="product-information">
+        <a routerLink="/products/{{product.id}}" class="product-name">
+          <span>{{product.name}}</span>
+        </a>
+        <span class="product-overview">{{product.overview}}</span>
+      </div>
     </div>
     <span class="flex-space"></span>
   </div>

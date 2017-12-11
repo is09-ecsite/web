@@ -12,7 +12,9 @@ export class ProductListComponent implements OnInit {
 
   products: Product[];
 
-  constructor(private productService: ProductService) { }
+  constructor(
+    private productService: ProductService,
+  ) { }
 
   ngOnInit() {
     this.getProducts();
@@ -20,14 +22,12 @@ export class ProductListComponent implements OnInit {
 
   getProducts(): void {
     this.productService.getProducts()
-        .subscribe(products => {
-          for (let i = products.length - 1; 0 < i; i--) {
-            let r = Math.floor(Math.random() * (i + 1));
-            [products[i], products[r]] = [products[r], products[i]];
-          }
-          
-          this.products = products
-        });
+      .subscribe(products => {
+        for (let i = products.length - 1; 0 < i; i--) {
+          let r = Math.floor(Math.random() * (i + 1));
+          [products[i], products[r]] = [products[r], products[i]];
+        }
+        this.products = products
+      });
   }
-
 }
