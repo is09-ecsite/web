@@ -17,6 +17,8 @@ import { SignInComponent } from './sign-in/sign-in.component';
 import { SettlementComponent } from './settlement/settlement.component';
 import { ProductService } from './service/product.service';
 import { CartService } from './cart.service';
+import { ListComponent } from './list/list.component';
+import { ListItemComponent } from './list-item/list-item.component';
 
 
 @NgModule({
@@ -40,7 +42,9 @@ import { CartService } from './cart.service';
     MyPageComponent,
     CartComponent,
     SignInComponent,
-    SettlementComponent
+    SettlementComponent,
+    ListComponent,
+    ListItemComponent
   ],
   providers: [ProductService, CartService],
   bootstrap: [AppComponent]
