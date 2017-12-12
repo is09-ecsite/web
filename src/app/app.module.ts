@@ -5,6 +5,7 @@ import { HttpClientModule }    from '@angular/common/http';
 
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService }  from './mock/in-memory-data.service';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { ProductListComponent } from './product-list/product-list.component';
@@ -16,15 +17,18 @@ import { CartComponent } from './cart/cart.component';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { SettlementComponent } from './settlement/settlement.component';
 import { ProductService } from './service/product.service';
-import { CartService } from './cart.service';
+import { CartService } from './service/cart.service';
 import { ListComponent } from './list/list.component';
 import { ListItemComponent } from './list-item/list-item.component';
+import { AuthenticationService } from './service/authentication.service';
 
 @NgModule({
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
 
     // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
     // and returns simulated server responses.
@@ -45,7 +49,7 @@ import { ListItemComponent } from './list-item/list-item.component';
     ListComponent,
     ListItemComponent
   ],
-  providers: [ProductService, CartService],
+  providers: [ProductService, CartService, AuthenticationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

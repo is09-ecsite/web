@@ -8,12 +8,13 @@ import { ProductService } from '../service/product.service';
   templateUrl: './product-list.component.html',
   styleUrls: ['./product-list.component.css']
 })
+
 export class ProductListComponent implements OnInit {
 
   products: Product[];
 
   constructor(
-    private productService: ProductService,
+    private productService: ProductService
   ) { }
 
   ngOnInit() {

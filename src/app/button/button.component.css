@@ -1,4 +1,4 @@
-div {
+button {
     align-items        : center;
     background-color   : rgba(106, 140, 199, 1);
     border-radius      : 8px;
@@ -17,7 +17,7 @@ div {
     -moz-user-select   : none;
 }
 
-div:hover {
+button:hover {
     background-color: rgba(127, 158, 208, 1);
     border-radius   : 2px;
     box-shadow      : 0 0 4px rgba(0,0,0,0.12), 0 2px 4px rgba(0,0,0,0.24);
@@ -35,16 +35,16 @@ div:hover {
     width        : 80px;
 } */
 
-div:active {
+button:active {
     background-color: rgba(149, 175, 218, 1);
 }
 
-div.flat {
+button.flat {
     background-color: rgba(0, 0, 0, 0);
     border          : 1px solid rgba(0, 0, 0, .2);
 }
 
-div.flat:hover {
+button.flat:hover {
     background-color: rgba(0, 0, 0, 0.1);
     box-shadow      : none;
 }

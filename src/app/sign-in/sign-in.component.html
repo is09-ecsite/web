@@ -1,23 +1,56 @@
 <content class="host">
-  <div class="sign-in-box">
+  <form 
+    class="sign-in-box"
+    [formGroup]="form"
+    (ngSubmit)="onSubmit($event)"
+  >
     <h3>サインイン</h3>
     <div class="git-code">
       <div class="code-wrapper">
-        <input type="text" maxlength="4" id="gift-code-1">
+        <input 
+          autocomplete="off"
+          formControlName="giftCode1"
+          type="text"
+          maxlength="4"
+          name="giftCode1"
+        >
       </div>
       <div class="code-wrapper">
-        <input type="text" maxlength="4" id="gift-code-2">
+        <input
+          autocomplete="off"
+          formControlName="giftCode2"
+          type="text"
+          maxlength="4"
+          name="giftCode2"
+        >
       </div>
       <div class="code-wrapper">
-        <input type="text" maxlength="4" id="gift-code-3">
+        <input
+          autocomplete="off"
+          formControlName="giftCode3"
+          type="text"
+          maxlength="4"
+          name="giftCode3"
+        >
       </div>
       <div class="code-wrapper">
-        <input type="text" maxlength="4" id="gift-code-4">
+        <input
+          autocomplete="off"
+          formControlName="giftCode4"
+          type="text"
+          maxlength="4"
+          name="giftCode4"
+        >
       </div>
     </div>
     <div class="submit-area">
       <div class="flexible-space"></div>
-      <app-button bgType="flat">sign-in</app-button>
+      <app-button 
+        bgType="flat"
+        type="submit"
+      >
+        sign-in
+      </app-button>
     </div>
-  </div>
+  </form>
 </content>

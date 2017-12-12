@@ -23,9 +23,12 @@ h2 {
 }
 
 .img-wrapper {
-    max-height         : 150px;
-    max-width          : 250px;
-    overflow           : hidden;
+    align-items    : center;
+    display        : flex;
+    justify-content: center;
+    max-height     : 150px;
+    max-width      : 250px;
+    overflow       : hidden;
 }
 
 img {

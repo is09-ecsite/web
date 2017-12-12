@@ -45,7 +45,7 @@ export class InMemoryDataService implements InMemoryDbService {
         },
         {
             id          : 5,
-            image_url   : 'http://placehold.jp/500x300.png?text=5',
+            image_url   : 'assets/group-5.gif',
             site_url    : 'http://blackrockdigital.github.io/startbootstrap-creative/',
             name        : 'team5 product name',
             price       : 5000,
