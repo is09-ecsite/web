@@ -102,26 +102,6 @@ export class InMemoryDataService implements InMemoryDbService {
             overview    : 'あいうえおかきくけこさしすせそたちつてとなにぬねのはひふへほまみむめもやゆよらりるれろわをん１２３４５６７８９０おわり',
             created_date: 'Thu Dec 05 2017 21:27:49 GMT+0900 (JST)',
             updated_date: 'Thu Dec 05 2017 21:27:49 GMT+0900 (JST)'
-        },
-        {
-            id          : 11,
-            image_url   : 'http://placehold.jp/500x300.png?text=11',
-            site_url    : 'http://blackrockdigital.github.io/startbootstrap-creative/',
-            name        : 'team11 product name',
-            price       : 11000,
-            overview    : 'あいうえおかきくけこさしすせそたちつてとなにぬねのはひふへほまみむめもやゆよらりるれろわをん１２３４５６７８９０おわり',
-            created_date: 'Thu Dec 05 2017 21:27:49 GMT+0900 (JST)',
-            updated_date: 'Thu Dec 05 2017 21:27:49 GMT+0900 (JST)'
-        },
-        {
-            id          : 12,
-            image_url   : 'http://placehold.jp/500x300.png?text=12',
-            site_url    : 'http://blackrockdigital.github.io/startbootstrap-creative/',
-            name        : 'team12 product name',
-            price       : 12000,
-            overview    : 'あいうえおかきくけこさしすせそたちつてとなにぬねのはひふへほまみむめもやゆよらりるれろわをん１２３４５６７８９０おわり',
-            created_date: 'Thu Dec 05 2017 21:27:49 GMT+0900 (JST)',
-            updated_date: 'Thu Dec 05 2017 21:27:49 GMT+0900 (JST)'
         }
     ];
     return {products};
