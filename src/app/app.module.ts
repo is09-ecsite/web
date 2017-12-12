@@ -20,7 +20,6 @@ import { CartService } from './cart.service';
 import { ListComponent } from './list/list.component';
 import { ListItemComponent } from './list-item/list-item.component';
 
-
 @NgModule({
   imports: [
     BrowserModule,
