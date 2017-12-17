@@ -1,7 +1,30 @@
 <section class="host">
   <app-list>
-    <app-list-item>a</app-list-item>
-    <app-list-item>b</app-list-item>
-    <app-list-item>c</app-list-item>
+    <div class="cart-management-header">
+      <app-button bgType="flat" (click)="clearCart()">
+        空にする
+      </app-button>
+      <span class="flexible-space"></span>
+      <app-button bgType="flat">
+        レジに進む
+      </app-button>
+    </div>
+    <app-list-item *ngFor="let product of productsInCart" class="item">
+      <div class="item-content">
+        <a class="img-wrapper" routerLink="/products/{{product.id}}">
+          <img src="{{product.image_url}}">
+        </a>
+        <div class="product-info">
+          <a routerLink="/products/{{product.id}}">{{product.name}}</a>
+          <div>{{product.overview}}</div>
+        </div>
+        <div>
+          <div>単価 : {{product.price}} 円</div>
+          <app-button bgType="flat" fontColor="black" (click)="clearCartById(product.id)">
+            削除
+          </app-button>
+        </div>
+      </div>
+    </app-list-item>
   </app-list>
 </section>

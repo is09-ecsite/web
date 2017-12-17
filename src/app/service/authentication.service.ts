@@ -18,16 +18,24 @@ export class AuthenticationService {
   private authentication: Authentication;
   private subscribers = [];
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) { 
+    const token = localStorage.getItem("token");
+    if(token) {
+      const authentication = new Authentication();
+      authentication.token = token;
+      this.authentication = authentication;
+    }
+  };
 
   /** create authentication by gift code. Will 404 if id not found */
   createAuthentication(giftCode: string): Observable<Authentication> {
     return this.http.get<Authentication>(URL.v1.auth).pipe(
       tap(authentication => {
         this.authentication = authentication;
+        localStorage.setItem("token", authentication.token);
         for (let subscribe of this.subscribers)
-          subscribe.listener(authentication)
-          this.log(`fetched authentication`)
+          subscribe.listener(authentication);
+          this.log(`fetched authentication`);
       }),
       catchError(this.handleError<Authentication>(`createAuthentication`))
     );

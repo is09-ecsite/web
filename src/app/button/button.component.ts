@@ -8,9 +8,11 @@ import { Directive, ElementRef, HostListener, Input } from '@angular/core';
 })
 export class ButtonComponent implements OnInit {
 
-  @Input() bgType: "flat";
+  @Input() bgType: string = "flat";
+  @Input() fontColor: string = "white";
 
-  constructor() { }
+  constructor() { 
+  }
 
   ngOnInit() {
   }

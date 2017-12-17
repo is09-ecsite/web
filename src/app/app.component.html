@@ -2,9 +2,23 @@
 <header>
   <div>IS09 EC-SITE</div>
   <app-button  
-    routerLink="/sign-in" 
+    routerLink="/cart" 
     bgType="flat"
-  >sign-in</app-button>
+  >
+    cart
+  </app-button>
+  <div *ngIf="authentication; then thenBlock; else elseBlock"></div>
+  <ng-template #thenBlock>
+    sign-in中
+  </ng-template>
+  <ng-template #elseBlock>
+    <app-button  
+      routerLink="/sign-in" 
+      bgType="flat"
+    >
+      sign-in
+    </app-button>
+  </ng-template>
 </header>
 <div class="content">
   <router-outlet></router-outlet>

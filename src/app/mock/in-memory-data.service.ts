@@ -6,7 +6,7 @@ export class InMemoryDataService implements InMemoryDbService {
         {
             id          : 1,
             image_url   : 'http://placehold.jp/500x300.png?text=1',
-            site_url    : 'http://blackrockdigital.github.io/startbootstrap-creative/',
+            site_url    : 'https://itoanimation.wixsite.com/home',
             name        : 'team1 product name',
             price       : 1000,
             overview    : 'あいうえおかきくけこさしすせそたちつてとなにぬねのはひふへほまみむめもやゆよらりるれろわをん１２３４５６７８９０おわり',
@@ -104,6 +104,13 @@ export class InMemoryDataService implements InMemoryDbService {
             updated_date: 'Thu Dec 05 2017 21:27:49 GMT+0900 (JST)'
         }
     ];
-    return {products};
+
+
+    const auth = {
+        token: "test-token"
+
+    }
+    
+    return {products, auth};
   }
 }

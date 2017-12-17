@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {FormControl, FormGroup, Validators} from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Authentication } from '../struct/authentication';
+import { AuthenticationService } from '../service/authentication.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sign-in',
@@ -15,7 +18,10 @@ export class SignInComponent implements OnInit {
     giftCode4: new FormControl("", Validators.minLength(2))
   });
 
-  constructor() { }
+  constructor(
+    private router: Router,
+    private authenticationService: AuthenticationService
+  ) { }
 
   ngOnInit() {
   }
@@ -27,7 +33,11 @@ export class SignInComponent implements OnInit {
     let giftCode4 = event.target.elements["giftCode4"].value;
 
     const giftCode = giftCode1 + giftCode2 + giftCode3 + giftCode4;
-    
-    console.log(giftCode);
+    this.authenticationService.createAuthentication(giftCode)
+
+    this.authenticationService.createAuthentication(giftCode)
+      .subscribe(Authentication => {
+        this.router.navigate(["/"]);
+      });
   }
 }

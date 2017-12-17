@@ -28,6 +28,8 @@ h2 {
     justify-content: center;
     max-height     : 150px;
     max-width      : 250px;
+    min-height     : 150px;
+    min-width      : 250px;
     overflow       : hidden;
 }
 
@@ -37,6 +39,8 @@ img {
     background-size    : cover;
     max-height         : 150px;
     max-width          : 250px;
+    min-height         : 150px;
+    min-width          : 250px;
     transition         : all .2s ease-out;
 }
 
