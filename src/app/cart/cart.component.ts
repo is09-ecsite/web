@@ -18,6 +18,7 @@ export class Struct {
 })
 export class CartComponent implements OnInit, OnDestroy {
 
+  countList    = [...Array(10)].map((x,i)=>i+1);
   products     : Product[] = [];
   protectedCart: Cart[] = [];
   structs      : Struct[] = [];
@@ -41,6 +42,11 @@ export class CartComponent implements OnInit, OnDestroy {
 
   ngOnDestroy() {
     this.subscribeId && this.cartService.unsubscribe(this.subscribeId);
+  }
+
+  chageCount(productId: number, event) {
+    console.log('chageCount')
+    console.log(productId, parseInt(event.target.selectedOptions[0].value))
   }
 
   clearCart() {

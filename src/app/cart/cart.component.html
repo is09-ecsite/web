@@ -20,6 +20,19 @@
         </div>
         <div>
           <div>単価 : {{struct.product.price}} 円</div>
+          <!-- for of がうまく動作しなかった。-->
+          <!-- <select name="count"  (change)="chageCount(struct.product.id, $event)" required>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3" ngSelected="true">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+          </select> -->
           <app-button bgType="flat" fontColor="black" (click)="clearCartById(struct.product.id)">
             削除
           </app-button>

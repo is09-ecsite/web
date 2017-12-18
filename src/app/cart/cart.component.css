@@ -95,3 +95,10 @@ app-list-item+app-list-item {
     margin-top: 1rem;
     font-size : 1rem;
 }
+
+select {
+    background-color: transparent;
+    border          : 1px solid #ccc;
+    height          : 32px;
+    width           : 48px;
+}

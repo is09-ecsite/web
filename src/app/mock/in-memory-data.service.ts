@@ -26,7 +26,7 @@ export class InMemoryDataService implements InMemoryDbService {
         {
             id          : 3,
             image_url   : 'http://placehold.jp/500x300.png?text=3',
-            site_url    : 'http://blackrockdigital.github.io/startbootstrap-creative/',
+            site_url    : 'http://localhost:8080/page/3/index.html',
             name        : 'team3 product name',
             price       : 3000,
             overview    : 'あいうえおかきくけこさしすせそたちつてとなにぬねのはひふへほまみむめもやゆよらりるれろわをん１２３４５６７８９０おわり',
@@ -85,18 +85,18 @@ export class InMemoryDataService implements InMemoryDbService {
         },
         {
             id          : 9,
-            image_url   : 'http://placehold.jp/500x300.png?text=9',
-            site_url    : 'http://blackrockdigital.github.io/startbootstrap-creative/',
-            name        : 'team9 product name',
+            image_url   : 'http://localhost:8080/group-9.jpg',
+            site_url    : 'http://localhost:8080/page/9/index.html',
+            name        : 'CollegeMap',
             price       : 9000,
-            overview    : 'あいうえおかきくけこさしすせそたちつてとなにぬねのはひふへほまみむめもやゆよらりるれろわをん１２３４５６７８９０おわり',
+            overview    : '一目で分かる校内地図、ネット環境。地図の画像を決めるコンテストなど！また君だけのオリジナルのアバターを作り楽しもう！',
             created_date: 'Thu Dec 05 2017 21:27:49 GMT+0900 (JST)',
             updated_date: 'Thu Dec 05 2017 21:27:49 GMT+0900 (JST)'
         },
         {
             id          : 10,
             image_url   : 'http://placehold.jp/500x300.png?text=10',
-            site_url    : 'http://blackrockdigital.github.io/startbootstrap-creative/',
+            site_url    : 'http://localhost:8080/page/10/index.html',
             name        : 'team10 product name',
             price       : 10000,
             overview    : 'あいうえおかきくけこさしすせそたちつてとなにぬねのはひふへほまみむめもやゆよらりるれろわをん１２３４５６７８９０おわり',

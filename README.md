@@ -54,7 +54,7 @@ $ http-server assets -p 8080
     - overview    : [学校を使いこなすコミュニケーションツール]\n学食の内容や、食事の感想を言い合うアプリが満を持して登場
 - 3
     - image_url   : 
-    - site_url    : 
+    - site_url    : assets/page/3/index.html
     - name        : 
     - price       : 
     - overview    : 
@@ -67,7 +67,7 @@ $ http-server assets -p 8080
 - 5
     - image_url   : assets/group-5.gif
     - site_url    : assets/page/5/index.html(https://drive.google.com/drive/folders/1hsE6KKmATF3ZGEHJ0n53ay1v-wnQkksC)
-    - name        : 
+    - name        : あ
     - price       : 
     - overview    : 
 - 6
@@ -89,14 +89,14 @@ $ http-server assets -p 8080
     - price       : 
     - overview    : 
 - 9
-    - image_url   : 
-    - site_url    : 
-    - name        : 
+    - image_url   : assets/group-9.jpg
+    - site_url    : assets/page/9/index.html
+    - name        : CollegeMap
     - price       : 
-    - overview    : 
+    - overview    : 一目で分かる校内地図、ネット環境。地図の画像を決めるコンテストなど！また君だけのオリジナルのアバターを作り楽しもう！
 - 10
     - image_url   : 
-    - site_url    : 
+    - site_url    : assets/page/10/index.html
     - name        : 
     - price       : 
     - overview    : 
