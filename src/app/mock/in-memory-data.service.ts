@@ -15,11 +15,11 @@ export class InMemoryDataService implements InMemoryDbService {
         },
         {
             id          : 2,
-            image_url   : 'http://placehold.jp/500x300.png?text=2',
-            site_url    : 'http://blackrockdigital.github.io/startbootstrap-creative/',
-            name        : 'team2 product name',
+            image_url   : 'http://localhost:8080/group-2.jpg',
+            site_url    : 'http://localhost:8080/page/2/index.html',
+            name        : 'Comeal',
             price       : 2000,
-            overview    : 'あいうえおかきくけこさしすせそたちつてとなにぬねのはひふへほまみむめもやゆよらりるれろわをん１２３４５６７８９０おわり',
+            overview    : '[学校を使いこなすコミュニケーションツール]\n学食の内容や、食事の感想を言い合うアプリが満を持して登場',
             created_date: 'Thu Dec 02 2017 21:27:49 GMT+0900 (JST)',
             updated_date: 'Thu Dec 02 2017 21:27:49 GMT+0900 (JST)'
         },
@@ -45,7 +45,7 @@ export class InMemoryDataService implements InMemoryDbService {
         },
         {
             id          : 5,
-            image_url   : 'assets/group-5.gif',
+            image_url   : 'http://localhost:8080/group-5.gif',
             site_url    : 'http://blackrockdigital.github.io/startbootstrap-creative/',
             name        : 'team5 product name',
             price       : 5000,
@@ -108,7 +108,6 @@ export class InMemoryDataService implements InMemoryDbService {
 
     const auth = {
         token: "test-token"
-
     }
     
     return {products, auth};
