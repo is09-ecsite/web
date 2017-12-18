@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>弁当</title>
+	<link rel="stylesheet" href="./css/reset.css">
+	<link rel="stylesheet" href="./css/style.css">
+</head>
+<body onMouseDown="return false;" onSelectStart="return false" oncontextmenu="return false;">
+	<div class="flyer">
+		<section id="sakura">
+			<div class="imgZoome"><img src="./img/baniku.jpg" /></div>
+			<div class="contents left">
+				<img src="./title/sakura.png" alt="">
+				<div class="description attention">
+					<p>熊本県が生産量１位ですが、</p>
+					<p>敢えて長野県産 信州馬肉を採用。</p>
+					<p>信州の雄大な大地で育まれた馬肉が舌を駆けます。</p>
+				</div>
+			</div>
+			<div class="shadow-left"></div>
+		</section>
+		<section id="miso">
+			<div class="imgZoome"><img src="./img/miso.jpg" /></div>
+			<div class="contents right">
+				<img src="./title/miso.png" alt="">
+				<div class="description attention">
+					<p>使用する味噌は長野県産 信州味噌。</p>
+          <p>信州味噌は米麹と大豆から作られ、</p>
+          <p>深みのある辛口が特徴です。</p>
+				</div>
+			</div>
+			<div class="shadow-right"></div>
+		</section>
+		<section id="gohan">
+			<div class="imgZoome"><img src="./img/gohan.jpg" /></div>
+			<div class="contents left">
+				<img src="./title/hakumai.png" alt="">
+
+				<div class="description attention">
+					<p>ご飯はお隣の新潟県産こしいぶきを使用。</p>
+          <p>硬さやねばりのバランスの良さが特徴。</p>
+          <p>身の締まった馬肉と相性バツグン。</p>
+				</div>
+			</div>
+			<div class="shadow-left"></div>
+		</section>
+		<section id="bento">
+			<div class="imgZoome"><img src="./img/bento.jpg" /></div>
+			<div class="contents right">
+				<img src="./title/bento.png" alt="">
+				<div class="description attention">
+					<p>馬肉の味噌煮込みをご飯へのせて提供。</p>
+          <p>普段見かけることのない馬肉弁当は、</p>
+          <p>きっと皆さんの舌を唸らせてくれるはず。</p>
+				</div>
+			</div>
+			<div class="shadow-right"></div>
+		</section>
+		<section>
+			<div id="form">
+				<img src="./img/kisouma.png" alt="">
+				<div id="description">
+					<table>
+						<tr>
+							<td style="width: 100px">商品名</td>
+							<td style="width: 15px">:</td>
+							<td style="width: 160px">馬肉弁当</td>
+						</tr>
+						<tr>
+							<td>素材産地</td>
+							<td>:</td>
+							<td>長野県、新潟県</td>
+						</tr>
+						<tr>
+							<td>内容量</td>
+							<td>:</td>
+							<td>514g</td>
+						</tr>
+						<tr>
+							<td>販売価格</td>
+							<td>:</td>
+							<td>780円(税込)</td>
+						</tr>
+
+					</table>
+				</div>
+				<button type="button" onclick="window.top.postMessage(JSON.stringify({productId:7}), '*');">
+					カートに入れる
+				</button>
+			</div>
+		</section>
+	</div>
+</body>
+</html>

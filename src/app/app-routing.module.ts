@@ -6,6 +6,7 @@ import { SignInComponent }  from './sign-in/sign-in.component';
 import { MyPageComponent }  from './my-page/my-page.component';
 import { ProductListComponent }  from './product-list/product-list.component';
 import { ProductItemComponent }  from './product-item/product-item.component';
+import { SettlementComponent }  from './settlement/settlement.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'products', pathMatch: 'full' },
@@ -14,6 +15,7 @@ const routes: Routes = [
   { path: 'my-page', component: MyPageComponent },
   { path: 'products', component: ProductListComponent },
   { path: 'products/:id', component: ProductItemComponent },
+  { path: 'settlement', component: SettlementComponent },
 ];
 
 @NgModule({

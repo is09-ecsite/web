@@ -19,7 +19,7 @@ $ git clone http://$ipaddress/IS09/web.git
 ## Build
 
 Development:
-```
+```bash
 $ ng serve --open
 $ http-server assets -p 8080
 ```
@@ -32,26 +32,26 @@ $ http-server assets -p 8080
 ## 共有内容
 
 - /assets
-    - 各班から送られたhtml及び
+    - 各班から送られたhtml及び画像
 - /src/app/mock/in-memory-data.service.ts
     - mockserver
 - /src/app/service/URL.ts
     - URL情報一覧
 
-```
 
+## 提出状況
 - 1
     - image_url   : 
-    - site_url    : 'https://itoanimation.wixsite.com/home'
+    - site_url    : https://itoanimation.wixsite.com/home
     - name        : 
     - price       : 
     - overview    : 
 - 2
     - image_url   : assets/group-2.jpg
-    - site_url    : assets/page/2/index.html
-    - name        : 'Comeal'
-    - price       : 
-    - overview    : '[学校を使いこなすコミュニケーションツール]\n学食の内容や、食事の感想を言い合うアプリが満を持して登場'
+    - site_url    : assets/page/2/index.html(https://github.com/FlareGlory/valet)
+    - name        : Comeal
+    - price       : 5000
+    - overview    : [学校を使いこなすコミュニケーションツール]\n学食の内容や、食事の感想を言い合うアプリが満を持して登場
 - 3
     - image_url   : 
     - site_url    : 
@@ -66,7 +66,7 @@ $ http-server assets -p 8080
     - overview    : 
 - 5
     - image_url   : assets/group-5.gif
-    - site_url    : 
+    - site_url    : assets/page/5/index.html(https://drive.google.com/drive/folders/1hsE6KKmATF3ZGEHJ0n53ay1v-wnQkksC)
     - name        : 
     - price       : 
     - overview    : 
@@ -77,14 +77,14 @@ $ http-server assets -p 8080
     - price       : 
     - overview    : 
 - 7
-    - image_url   : 
-    - site_url    : 
-    - name        : 
-    - price       : 
-    - overview    : 
+    - image_url   : assets/group-8.jpg
+    - site_url    : assets/page/7/index.html
+    - name        : 馬肉弁当
+    - price       : 780
+    - overview    : 長野県産の馬肉を使用した馬肉味噌煮込み弁当
 - 8
     - image_url   : 
-    - site_url    : 
+    - site_url    : assets/page/8/index.html
     - name        : 
     - price       : 
     - overview    : 

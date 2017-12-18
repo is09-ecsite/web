@@ -46,7 +46,7 @@ export class InMemoryDataService implements InMemoryDbService {
         {
             id          : 5,
             image_url   : 'http://localhost:8080/group-5.gif',
-            site_url    : 'http://blackrockdigital.github.io/startbootstrap-creative/',
+            site_url    : 'http://localhost:8080/page/5/index.html',
             name        : 'team5 product name',
             price       : 5000,
             overview    : 'あいうえおかきくけこさしすせそたちつてとなにぬねのはひふへほまみむめもやゆよらりるれろわをん１２３４５６７８９０おわり',
@@ -65,18 +65,18 @@ export class InMemoryDataService implements InMemoryDbService {
         },
         {
             id          : 7,
-            image_url   : 'http://placehold.jp/500x300.png?text=7',
-            site_url    : 'http://blackrockdigital.github.io/startbootstrap-creative/',
-            name        : 'team7 product name',
-            price       : 7000,
-            overview    : 'あいうえおかきくけこさしすせそたちつてとなにぬねのはひふへほまみむめもやゆよらりるれろわをん１２３４５６７８９０おわり',
+            image_url   : 'http://localhost:8080/group-7.jpg',
+            site_url    : 'http://localhost:8080/page/7/index.html',
+            name        : '馬肉弁当',
+            price       : 780,
+            overview    : '長野県産の馬肉を使用した馬肉味噌煮込み弁当',
             created_date: 'Thu Dec 05 2017 21:27:49 GMT+0900 (JST)',
             updated_date: 'Thu Dec 05 2017 21:27:49 GMT+0900 (JST)'
         },
         {
             id          : 8,
             image_url   : 'http://placehold.jp/500x300.png?text=8',
-            site_url    : 'http://blackrockdigital.github.io/startbootstrap-creative/',
+            site_url    : 'http://localhost:8080/page/8/index.html',
             name        : 'team8 product name',
             price       : 8000,
             overview    : 'あいうえおかきくけこさしすせそたちつてとなにぬねのはひふへほまみむめもやゆよらりるれろわをん１２３４５６７８９０おわり',

@@ -31,7 +31,6 @@ export class ProductListComponent implements OnInit {
           [products[i], products[r]] = [products[r], products[i]];
         }
         this.products = products
-        this.cartService.addProducts(products);
       });
   }
 }
