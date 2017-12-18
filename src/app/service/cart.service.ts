@@ -66,7 +66,7 @@ export class CartService {
     return carts;
   }
 
-  subscribe(listener: (Cart) => any) : string {
+  subscribe(listener: (Cart) => any): string {
     listener(this.getCarts());
     let id = Math.random().toString(36).slice(-10);
     this.subscribers = this.subscribers.concat({listener, id});
