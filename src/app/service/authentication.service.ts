@@ -35,7 +35,7 @@ export class AuthenticationService {
         localStorage.setItem("token", authentication.token);
         for (let subscribe of this.subscribers)
           subscribe.listener(authentication);
-          this.log(`fetched authentication`);
+        this.log(`fetched authentication`);
       }),
       catchError(this.handleError<Authentication>(`createAuthentication`))
     );

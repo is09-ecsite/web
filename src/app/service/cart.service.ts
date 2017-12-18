@@ -3,11 +3,14 @@ import { Injectable } from '@angular/core';
 import { of } from 'rxjs/observable/of';
 import { catchError, map, tap } from 'rxjs/operators';
 
+import { Cart } from '../struct/cart';
 import { Product } from './../struct/product';
 import { ProductService } from '../service/product.service';
 
 @Injectable()
 export class CartService {
+
+  private subscribers = [];
 
   constructor(
     private productService: ProductService
@@ -21,15 +24,29 @@ export class CartService {
         if (e.origin) {
           // domainが決まってないのでtargetOriginは*です。
           // window.postMessage("1", "*");
-          try{ 
+          try{
             const data = JSON.parse(e.data)
             if (data.productId) {
 
               console.log(data.productId, "班の商品をカートに追加")
-              this.productService.getProduct(data.productId)
-                .subscribe(product => {
-                  product && this.addProduct(product);
-                })
+
+              let cart =  this.getCarts().find(c => c.id == data.productId)
+              if (cart) {
+                this.setCarts(
+                  this.getCarts().map(c => {
+                    if (c.id == data.id) 
+                      c.purchaseNumber++
+                    return c
+                  })
+                )
+              } else {
+                let newCart = new Cart()
+                newCart.id = data.productId;
+                newCart.purchaseNumber = 1;
+                this.setCarts(
+                  this.getCarts().concat(newCart)
+                )
+              }
             }
           } catch (e) {}
         }
@@ -37,51 +54,27 @@ export class CartService {
       false
     );
   }
-
-  /** ADD products from the localstorage */
-  addProducts (products: Product[]): Product[] {
-    return this.setProducts(this.filterProducts(products))
-  }
-
-  /** ADD product from the localstorage */
-  addProduct (product: Product): Product[] {
-    return this.setProducts(this.filterProducts([product]))
-  }
-
   /** GET products from the localstorage */
-  getProducts (): Product[] {
-    return JSON.parse(localStorage.getItem("cart")) as Product[] || [];
+  getCarts (): Cart[] {
+    return JSON.parse(localStorage.getItem("cart")) as Cart[] || [];
   }
 
-  /** check product from the localstorage */
-  hasProduct (productId: number): boolean {
-    return this.getProducts().some(x => x.id == productId)
+  setCarts (carts: Cart[]): Cart[] {
+    localStorage.setItem("cart", JSON.stringify(carts))
+    for (let subscribe of this.subscribers)
+      subscribe.listener(this.getCarts());
+    return carts;
   }
 
-  /** Remove product by id on the localstorage */
-  removeProduct (productId: number): Product[] {
-    return this.setProducts(this.getProducts().filter(x => x.id != productId))
+  subscribe(listener: (Cart) => any) : string {
+    listener(this.getCarts());
+    let id = Math.random().toString(36).slice(-10);
+    this.subscribers = this.subscribers.concat({listener, id});
+    return id;
   }
 
-  /** Remove products on the localstorage */
-  removeProducts(): Product[] {
-    localStorage.setItem("cart", "[]");
-    return [];
-  }
-  
-  /** SET products on the localstorage */
-  setProducts (products: Product[]) : Product[] {
-    localStorage.setItem("cart", JSON.stringify(products));
-    return products;
+  unsubscribe(id: string) {
+    this.subscribers = this.subscribers.filter(s => s.id != id)
   }
 
-  private filterProducts(products: Product[]): Product[] {
-    const prevProducts = this.getProducts();
-    const prevProductIds = prevProducts.map(x => x.id)
-
-    return prevProducts.concat(
-      products.filter(x => !prevProductIds.includes(x.id))
-    )
-  }
- 
 }
