@@ -67,7 +67,7 @@ $ http-server assets -p 8080
 - 5
     - image_url   : assets/group-5.gif
     - site_url    : assets/page/5/index.html(https://drive.google.com/drive/folders/1hsE6KKmATF3ZGEHJ0n53ay1v-wnQkksC)
-    - name        : あ
+    - name        : 
     - price       : 
     - overview    : 
 - 6

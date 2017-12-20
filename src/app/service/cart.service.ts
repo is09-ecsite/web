@@ -35,8 +35,8 @@ export class CartService {
                 this.setCarts(
                   this.getCarts().map(c => {
                     if (c.id == data.id) 
-                      c.purchaseNumber++
-                    return c
+                      c.purchaseNumber++;
+                    return c;
                   })
                 )
               } else {
