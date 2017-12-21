@@ -29,17 +29,17 @@ export class InMemoryDataService implements InMemoryDbService {
             site_url    : 'http://localhost:8080/page/3/index.html',
             name        : 'team3 product name',
             price       : 3000,
-            overview    : 'あいうえおかきくけこさしすせそたちつてとなにぬねのはひふへほまみむめもやゆよらりるれろわをん１２３４５６７８９０おわり',
+            overview    : '3班の商品詳細がまだ決まっていないので仮置きの文章です。',
             created_date: 'Thu Dec 03 2017 21:27:49 GMT+0900 (JST)',
             updated_date: 'Thu Dec 03 2017 21:27:49 GMT+0900 (JST)'
         },
         {
             id          : 4,
-            image_url   : 'http://placehold.jp/500x300.png?text=4',
-            site_url    : 'http://blackrockdigital.github.io/startbootstrap-creative/',
+            image_url   : 'http://localhost:8080/group-4.jpg',
+            site_url    : 'http://localhost:8080/page/4/converted-4han.html',
             name        : 'team4 product name',
             price       : 4000,
-            overview    : 'あいうえおかきくけこさしすせそたちつてとなにぬねのはひふへほまみむめもやゆよらりるれろわをん１２３４５６７８９０おわり',
+            overview    : 'あなたの知らないスポットを探し出し、みんでシェアして一歩リード！',
             created_date: 'Thu Dec 04 2017 21:27:49 GMT+0900 (JST)',
             updated_date: 'Thu Dec 04 2017 21:27:49 GMT+0900 (JST)'
         },

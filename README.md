@@ -57,13 +57,13 @@ $ http-server assets -p 8080
     - site_url    : assets/page/3/index.html
     - name        : 
     - price       : 
-    - overview    : 
+    - overview    : 3班の商品詳細がまだ決まっていないので仮置きの文章です。
 - 4
-    - image_url   : 
-    - site_url    : 
-    - name        : 
-    - price       : 
-    - overview    : 
+    - image_url   : assets/group-4.jpg
+    - site_url    : assets/page/4/converted-4han.html
+    - name        : はちマイ
+    - price       : 500
+    - overview    : あなたの知らないスポットを探し出し、みんでシェアして一歩リード！
 - 5
     - image_url   : assets/group-5.gif
     - site_url    : assets/page/5/index.html(https://drive.google.com/drive/folders/1hsE6KKmATF3ZGEHJ0n53ay1v-wnQkksC)
@@ -77,7 +77,7 @@ $ http-server assets -p 8080
     - price       : 
     - overview    : 
 - 7
-    - image_url   : assets/group-8.jpg
+    - image_url   : assets/group-7.jpg
     - site_url    : assets/page/7/index.html
     - name        : 馬肉弁当
     - price       : 780
