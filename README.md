@@ -83,7 +83,7 @@ $ http-server assets -p 8080
     - price       : 780
     - overview    : 長野県産の馬肉を使用した馬肉味噌煮込み弁当
 - 8
-    - image_url   : 
+    - image_url   : assets/group-8.jpg
     - site_url    : assets/page/8/index.html
     - name        : 
     - price       : 
@@ -95,7 +95,7 @@ $ http-server assets -p 8080
     - price       : 
     - overview    : 一目で分かる校内地図、ネット環境。地図の画像を決めるコンテストなど！また君だけのオリジナルのアバターを作り楽しもう！
 - 10
-    - image_url   : 
+    - image_url   : assets/group-10.jpg
     - site_url    : assets/page/10/index.html
     - name        : 
     - price       : 

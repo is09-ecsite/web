@@ -20,22 +20,15 @@ File: Layout CSS
 .row5, .row5 a{}
 
 
-/* Header
---------------------------------------------------------------------------------------------------------------- */
-#header{padding:50px 0;}
-
-#header #logo{}
-#header #logo h1{margin:0; padding:0; font-size:22px;}
-
 
 /* Page Intro
 --------------------------------------------------------------------------------------------------------------- */
 #pageintro{padding:250px 0 150px;}
 
-#pageintro .introtxt{display:block; max-width:50%; margin:0 auto; text-align:center;}
+#pageintro .introtxt{display:block; max-width:70%; margin:0 auto; text-align:center;}
 #pageintro .introtxt *{margin:0;}
-#pageintro .introtxt .heading{margin-bottom:15px; font-size:36px;}
-#pageintro .introtxt p{font-size:16px; line-height:1.4;}
+#pageintro .introtxt .heading{margin-bottom:15px; font-size:50px;}
+#pageintro .introtxt p{font-size:20px; line-height:1.4;}
 #pageintro .introtxt footer{margin-top:30px;}
 
 
@@ -118,12 +111,6 @@ File: Layout CSS
 #footer .contact li i{display:block; position:absolute; top:0; left:0; width:30px; font-size:16px; text-align:center;}
 
 
-/* Copyright
---------------------------------------------------------------------------------------------------------------- */
-#copyright{padding:20px 0;}
-#copyright *{margin:0; padding:0;}
-
-
 /* Transition Fade
 --------------------------------------------------------------------------------------------------------------- */
 *, *::before, *::after{transition:all .3s ease-in-out;}
@@ -135,70 +122,6 @@ File: Layout CSS
 /* ------------------------------------------------------------------------------------------------------------ */
 /* ------------------------------------------------------------------------------------------------------------ */
 /* ------------------------------------------------------------------------------------------------------------ */
-
-
-/* Navigation
---------------------------------------------------------------------------------------------------------------- */
-nav ul, nav ol{margin:0; padding:0; list-style:none;}
-
-#mainav, #breadcrumb, .sidebar nav{line-height:normal;}
-#mainav .drop::after, #mainav li li .drop::after, #breadcrumb li a::after, .sidebar nav a::after{position:absolute; font-family:"FontAwesome"; font-size:10px; line-height:10px;}
-
-/* Top Navigation */
-#mainav{}
-#mainav ul.clear{margin-top:3px;}
-#mainav ul{text-transform:uppercase;}
-#mainav ul ul{z-index:9999; position:absolute; width:180px; text-transform:none;}
-#mainav ul ul ul{left:180px; top:0;}
-#mainav li{display:inline-block; position:relative; margin:0 15px 0 0; padding:0;}
-#mainav li:last-child{margin-right:0;}
-#mainav li li{width:100%; margin:0;}
-#mainav li a{display:block; padding:0 0 10px 0;}
-#mainav li li a{border:solid; border-width:0 0 1px 0;}
-#mainav .drop{padding-left:15px;}
-#mainav li li a, #mainav li li .drop{display:block; margin:0; padding:10px 15px;}
-#mainav .drop::after, #mainav li li .drop::after{content:"\f0d7";}
-#mainav .drop::after{top:5px; left:5px;}
-#mainav li li .drop::after{top:15px; left:5px;}
-#mainav ul ul{visibility:hidden; opacity:0;}
-#mainav ul li:hover > ul{visibility:visible; opacity:1;}
-
-#mainav form{display:none; margin:0; padding:0;}
-#mainav form select, #mainav form select option{display:block; cursor:pointer; outline:none;}
-#mainav form select{width:100%; padding:5px; border:1px solid;}
-#mainav form select option{margin:5px; padding:0; border:none;}
-
-/* Breadcrumb */
-#breadcrumb{padding:30px 0;}
-#breadcrumb ul{margin:0; padding:0; list-style:none; text-transform:uppercase;}
-#breadcrumb li{display:inline-block; margin:0 6px 0 0; padding:0;}
-#breadcrumb li a{display:block; position:relative; margin:0; padding:0 12px 0 0; font-size:12px;}
-#breadcrumb li a::after{top:3px; right:0; content:"\f101";}
-#breadcrumb li:last-child a{margin:0; padding:0;}
-#breadcrumb li:last-child a::after{display:none;}
-
-/* Sidebar Navigation */
-.sidebar nav{display:block; width:100%;}
-.sidebar nav li{margin:0 0 3px 0; padding:0;}
-.sidebar nav a{display:block; position:relative; margin:0; padding:5px 10px 5px 15px; text-decoration:none; border:solid; border-width:0 0 1px 0;}
-.sidebar nav a::after{top:9px; left:5px; content:"\f101";}
-.sidebar nav ul ul a{padding-left:35px;}
-.sidebar nav ul ul a::after{left:25px;}
-.sidebar nav ul ul ul a{padding-left:55px;}
-.sidebar nav ul ul ul a::after{left:45px;}
-
-/* Pagination */
-.pagination{display:block; width:100%; text-align:center; clear:both;}
-.pagination li{display:inline-block; margin:0 2px 0 0;}
-.pagination li:last-child{margin-right:0;}
-.pagination a, .pagination strong{display:block; padding:8px 11px; border:1px solid; background-clip:padding-box; font-weight:normal;}
-
-/* Back to Top */
-#backtotop{z-index:999; display:inline-block; position:fixed; visibility:hidden; bottom:20px; right:20px; width:36px; height:36px; line-height:36px; font-size:16px; text-align:center; opacity:.2;}
-#backtotop i{display:block; width:100%; height:100%; line-height:inherit;}
-#backtotop.visible{visibility:visible; opacity:.5;}
-#backtotop:hover{opacity:1;}
-
 
 /* Tables
 --------------------------------------------------------------------------------------------------------------- */
@@ -237,7 +160,7 @@ input:focus, textarea:focus, *:required:focus{border-color:#56AED4;}
 .overlay.coloured::after{color:inherit; background-color:rgba(46,53,65,.8);/* #2E3541 */}
 
 .btn, .btn.inverse:hover{color:#FFFFFF; background-color:#56AED4; border-color:#56AED4;}
-.btn:hover, .btn.inverse{color:inherit; background-color:transparent; border-color:inherit;}
+.btn:hover, .btn.inverse{color:inherit; background-color:transparent; border-color:inherit;font-size: 1.5rem;}
 
 .icon{border-color:#D7D7D7;}
 article:hover .icon{border-color:inherit; color:#FFFFFF; background-color:#56AED4;}
@@ -251,8 +174,6 @@ article:hover .icon{border-color:inherit; color:#FFFFFF; background-color:#56AED
 .row5, .row5 a{color:#FFFFFF; background-color:#1B1F25;}
 
 
-/* Header */
-#header #logo a{color:inherit;}
 
 
 /* Full Width Split Box */
@@ -272,25 +193,6 @@ article:hover .icon{border-color:inherit; color:#FFFFFF; background-color:#56AED
 
 /* Footer */
 #footer .linklist li{border-color:#1B1F25;}
-
-
-/* Navigation */
-#mainav li a{color:inherit;}
-#mainav .active a, #mainav a:hover, #mainav li:hover > a{color:#56AED4; background-color:inherit;}
-#mainav li li a, #mainav .active li a{color:#FFFFFF; background-color:rgba(0,0,0,.6); border-color:rgba(0,0,0,.6);}
-#mainav li li:hover > a, #mainav .active .active > a{color:#FFFFFF; background-color:#56AED4;}
-#mainav form select{color:#FFFFFF; background-color:#000000; border-color:rgba(136,136,136,.5);/* #888888 */}
-
-#breadcrumb a{color:inherit; background-color:inherit;}
-#breadcrumb li:last-child a{color:#56AED4;}
-
-.container .sidebar nav a{color:inherit; border-color:#D7D7D7;}
-.container .sidebar nav a:hover{color:#56AED4;}
-
-.pagination a, .pagination strong{border-color:#D7D7D7;}
-.pagination .current *{color:#FFFFFF; background-color:#56AED4;}
-
-#backtotop{color:#FFFFFF; background-color:#56AED4;}
 
 
 /* Tables + Comments */
@@ -321,37 +223,11 @@ table a, #comments a{background-color:inherit;}
 }
 
 
-/* Mobile Devices
---------------------------------------------------------------------------------------------------------------- */
-@media screen and (max-width:900px){
-	.hoc{max-width:90%;}
-
-	#header{}
-
-	#mainav{}
-	#mainav ul{display:none;}
-	#mainav form{display:block;}
-
-	#breadcrumb{}
-
-	.container{}
-	#comments input[type="reset"]{margin-top:10px;}
-	.pagination li{display:inline-block; margin:0 5px 5px 0;}
-
-	#footer{}
-
-	#copyright{}
-	#copyright p:first-of-type{margin-bottom:10px;}
-}
-
-
 @media screen and (max-width:750px){
 	.imgl, .imgr{display:inline-block; float:none; margin:0 0 10px 0;}
 	.fl_left, .fl_right{display:block; float:none;}
 	.one_half, .one_third, .two_third, .one_quarter, .two_quarter, .three_quarter{display:block; float:none; width:auto; margin:0 0 30px 0; padding:0;}
 
-	#header{text-align:center;}
-	#header #logo{margin-bottom:25px;}
 
 	#pageintro{padding:150px 0;}
 	#pageintro .introtxt{max-width:none;}
@@ -376,4 +252,61 @@ table a, #comments a{background-color:inherit;}
 
 	.font-x2{font-size:1.4rem;}
 	.font-x3{font-size:1.6rem;}
+}
+
+.syouhin{
+	text-align: left;
+}
+.syouhin p{
+	font-size: 1.4rem;
+}
+
+.setumei{
+	text-align: center;
+}
+.setumei h1{
+position: relative;
+color: black;
+background: #d0ecff;
+line-height: 1.4;
+padding: 0.25em 0.5em;
+margin: 2em 0 0.5em;
+border-radius: 0 5px 5px 5px;
+font-size: 4rem;
+}
+
+.setumei h1:after {/*タブ*/
+  position: absolute;
+  font-family: FontAwesome,'Quicksand','Avenir','Arial',sans-serif;
+  content: '\f00c Check';
+background: #2196F3;
+color: #fff;
+left: 0px;
+
+bottom: 100%;
+border-radius: 5px 5px 0 0;
+padding: 3px 7px 1px;
+ 	font-size: 0.7em;
+ 	line-height: 1;
+ 	letter-spacing: 0.05em
+  }
+
+.waku {
+    padding: 0.5em 1em;
+    margin: 2em 0;
+    font-weight: bold;
+    color: #6091d3;/*文字色*/
+    background: #FFF;
+    border: solid 3px #6091d3;/*線*/
+    border-radius: 10px;/*角の丸み*/
+}
+.waku p {
+		font-size: 2rem;
+    margin: 0;
+    padding: 0;
+}
+
+.price p{
+font-size: 2rem;
+color: #ff8c00;
 }

@@ -75,7 +75,7 @@ export class InMemoryDataService implements InMemoryDbService {
         },
         {
             id          : 8,
-            image_url   : 'http://placehold.jp/500x300.png?text=8',
+            image_url   : 'http://localhost:8080/group-8.jpg',
             site_url    : 'http://localhost:8080/page/8/index.html',
             name        : 'team8 product name',
             price       : 8000,
@@ -95,7 +95,7 @@ export class InMemoryDataService implements InMemoryDbService {
         },
         {
             id          : 10,
-            image_url   : 'http://placehold.jp/500x300.png?text=10',
+            image_url   : 'http://localhost:8080/group-10.jpg',
             site_url    : 'http://localhost:8080/page/10/index.html',
             name        : 'team10 product name',
             price       : 10000,

@@ -8,45 +8,45 @@
 
 </head>
 <body>
-	
+
 	<div id = "top">
 		<p id = "name">
 			商品名
 		</p>
-		
+
 		<p id = "catchcopy">
 			キャッチコピー
 		</p>
-		
+
 		<p>
 			<form>
-				<input id = "buyButton_1" type = "image" src = "./image/Buybutton.png" alt = "購入ボタン">
+				<input id = "buyButton_1" onclick="window.top.postMessage(JSON.stringify({productId:3}), '*');" type = "image" src = "./image/Buybutton.png" alt = "購入ボタン">
 			</form>
 		</p>
 	</div>
-	
+
 	<div class = "box">
 		<br>
 		<h1>What's?</h1>
 	</div>
-	
+
 	<div class = "float">
 		<div id = "leftArea" class = "area">
 			Left Area
 		</div>
-		
+
 		<div id = "rightArea" class = "area">
 			Right Area
 			<br>
 			商品説明・用途
 		</div>
 	</div>
-	
+
 	<div class = "box">
 		<br>
 		<h1>Product</h1>
 	</div>
-	
+
 	<div id = "tokutyou">
 		<br>
 		<h1>製品の特徴</h1>
@@ -56,7 +56,7 @@
 		<img id = "circle_3" src = "./image/Circle_3.png" alt = "製品特徴" title = "製品特徴">
 		<img id = "circle_4" src = "./image/Circle_4.png" alt = "製品特徴" title = "製品特徴">
 	</div>
-	
+
 	<div id = "shiyou">
 	<br>
 		<h1>製品の仕様</h1>
@@ -67,7 +67,7 @@
 		<br>
 		<h1>Purchase</h1>
 		<form>
-			<input id = "buyButton_2" type = "image" src = "./image/BuyButton.png" alt = "購入ボタン" >
+			<input id = "buyButton_2" onclick="window.top.postMessage(JSON.stringify({productId:3}), '*');" type = "image" src = "./image/BuyButton.png"  alt = "購入ボタン" >
 		</form>
 		<br>
 	</div>
