@@ -5,11 +5,11 @@ export class InMemoryDataService implements InMemoryDbService {
     const products = [
         {
             id          : 1,
-            image_url   : 'http://placehold.jp/500x300.png?text=1',
+            image_url   : 'http://localhost:8080/group-1.png',
             site_url    : 'https://itoanimation.wixsite.com/home',
-            name        : 'team1 product name',
+            name        : 'Shareledge',
             price       : 1000,
-            overview    : 'あいうえおかきくけこさしすせそたちつてとなにぬねのはひふへほまみむめもやゆよらりるれろわをん１２３４５６７８９０おわり',
+            overview    : '「教えて欲しい」と「誰かに教えたい」そんな気持ちをマッチング! 交流型知識共有サービス',
             created_date: 'Thu Dec 01 2017 21:27:49 GMT+0900 (JST)',
             updated_date: 'Thu Dec 01 2017 21:27:49 GMT+0900 (JST)'
         },
@@ -47,9 +47,9 @@ export class InMemoryDataService implements InMemoryDbService {
             id          : 5,
             image_url   : 'http://localhost:8080/group-5.gif',
             site_url    : 'http://localhost:8080/page/5/index.html',
-            name        : 'team5 product name',
-            price       : 5000,
-            overview    : 'あいうえおかきくけこさしすせそたちつてとなにぬねのはひふへほまみむめもやゆよらりるれろわをん１２３４５６７８９０おわり',
+            name        : 'PONTE-物々交換サービス-',
+            price       : 3200,
+            overview    : '「持ってても宝の持ち腐れ…」そんな物が押し入れに眠っていませんか？それ、今欲しい物と交換できるかもしれません！',
             created_date: 'Thu Dec 05 2017 21:27:49 GMT+0900 (JST)',
             updated_date: 'Thu Dec 05 2017 21:27:49 GMT+0900 (JST)'
         },
@@ -77,9 +77,9 @@ export class InMemoryDataService implements InMemoryDbService {
             id          : 8,
             image_url   : 'http://localhost:8080/group-8.jpg',
             site_url    : 'http://localhost:8080/page/8/index.html',
-            name        : 'team8 product name',
-            price       : 8000,
-            overview    : 'あいうえおかきくけこさしすせそたちつてとなにぬねのはひふへほまみむめもやゆよらりるれろわをん１２３４５６７８９０おわり',
+            name        : 'newstr',
+            price       : 500,
+            overview    : 'ニュースも見れるスケジュール管理アプリが登場！学校生活、就職活動で使える便利な機能が盛りだくさん！！',
             created_date: 'Thu Dec 05 2017 21:27:49 GMT+0900 (JST)',
             updated_date: 'Thu Dec 05 2017 21:27:49 GMT+0900 (JST)'
         },
@@ -97,9 +97,9 @@ export class InMemoryDataService implements InMemoryDbService {
             id          : 10,
             image_url   : 'http://localhost:8080/group-10.jpg',
             site_url    : 'http://localhost:8080/page/10/index.html',
-            name        : 'team10 product name',
-            price       : 10000,
-            overview    : 'あいうえおかきくけこさしすせそたちつてとなにぬねのはひふへほまみむめもやゆよらりるれろわをん１２３４５６７８９０おわり',
+            name        : 'IS09カスタムアイス',
+            price       : 800,
+            overview    : '自分好みにおいしさ倍増！ 「ベース＋アイス＋トッピング」であなただけのアイスが作れます。',
             created_date: 'Thu Dec 05 2017 21:27:49 GMT+0900 (JST)',
             updated_date: 'Thu Dec 05 2017 21:27:49 GMT+0900 (JST)'
         }

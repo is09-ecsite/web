@@ -41,11 +41,11 @@ $ http-server assets -p 8080
 
 ## 提出状況
 - 1
-    - image_url   : 
+    - image_url   : assets/group-1.png
     - site_url    : https://itoanimation.wixsite.com/home
-    - name        : 
-    - price       : 
-    - overview    : 
+    - name        : Shareledge
+    - price       : 1000
+    - overview    : 「教えて欲しい」と「誰かに教えたい」そんな気持ちをマッチング! 交流型知識共有サービス
 - 2
     - image_url   : assets/group-2.jpg
     - site_url    : assets/page/2/index.html(https://github.com/FlareGlory/valet)
@@ -67,9 +67,9 @@ $ http-server assets -p 8080
 - 5
     - image_url   : assets/group-5.gif
     - site_url    : assets/page/5/index.html(https://drive.google.com/drive/folders/1hsE6KKmATF3ZGEHJ0n53ay1v-wnQkksC)
-    - name        : 
-    - price       : 
-    - overview    : 
+    - name        : PONTE-物々交換サービス-
+    - price       : 3200
+    - overview    : 「持ってても宝の持ち腐れ…」そんな物が押し入れに眠っていませんか？それ、今欲しい物と交換できるかもしれません！
 - 6
     - image_url   : 
     - site_url    : 
@@ -85,9 +85,9 @@ $ http-server assets -p 8080
 - 8
     - image_url   : assets/group-8.jpg
     - site_url    : assets/page/8/index.html
-    - name        : 
-    - price       : 
-    - overview    : 
+    - name        : newstr
+    - price       : 500
+    - overview    : ニュースも見れるスケジュール管理アプリが登場！学校生活、就職活動で使える便利な機能が盛りだくさん！！
 - 9
     - image_url   : assets/group-9.jpg
     - site_url    : assets/page/9/index.html
@@ -97,7 +97,7 @@ $ http-server assets -p 8080
 - 10
     - image_url   : assets/group-10.jpg
     - site_url    : assets/page/10/index.html
-    - name        : 
-    - price       : 
-    - overview    : 
+    - name        : IS09カスタムアイス
+    - price       : 800
+    - overview    : 自分好みにおいしさ倍増！ 「ベース＋アイス＋トッピング」であなただけのアイスが作れます。
 
