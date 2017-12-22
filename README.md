@@ -101,3 +101,18 @@ $ http-server assets -p 8080
     - price       : 800
     - overview    : 自分好みにおいしさ倍増！ 「ベース＋アイス＋トッピング」であなただけのアイスが作れます。
 
+
+## 各チーム制作物のmockテスト方法
+
+0. 前提としてビルドが正常に成功し`ng serve --open`にて正常な動作が確認済み
+1. `/assets/page/${teamId}`に各チームの制作物を追加
+2. 制作物のhtmlにあるカートに追加ボタンのonclick属性に`window.top.postMessage(JSON.stringify({productId:${teamId}}), '*');`を追加(`$(teamId)`にはチームIDを入れる)
+3. 商品画像は`/assets/group-${teamId}.{extention}`に追加
+4. `README.md`の`提出状況`に変更点を記述
+5. `/src/app/mock/in-memory-data.service.ts`に変更後の内容を適用
+6. ブラウザにて商品一覧画面(`http://localhost:4200/`)から追加・変更したチームを選択し、正常に各チーム制作物が表示されているか確認
+7. 各チーム制作物のhtmlにある「カートに追加」ボタンを押す。(この時developer-toolを表示しエラーがないか確認)
+8. headerのcartボタンからカート画面(`http://localhost:4200/cart`)に移動し、カート内に商品が追加されているか確認
+9. 8にて追加を確認した商品を「削除」ボタンを押した時に、正常にカートから削除されているか確認
+10. 0~10の全てが確認されてからgitでremoteに変更をpush
+

@@ -45,8 +45,8 @@ export class CartComponent implements OnInit, OnDestroy {
   }
 
   chageCount(productId: number, event) {
-    console.log('chageCount')
-    console.log(productId, parseInt(event.target.selectedOptions[0].value))
+    console.log('chageCount');
+    console.log(productId, parseInt(event.target.selectedOptions[0].value));
   }
 
   clearCart() {
@@ -59,7 +59,7 @@ export class CartComponent implements OnInit, OnDestroy {
       this.cartService.setCarts(
         this.cartService
           .getCarts()
-          .filter(c => c.id == productId)
+          .filter(c => c.id != productId)
       )
     );
 
