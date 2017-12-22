@@ -25,11 +25,11 @@ export class InMemoryDataService implements InMemoryDbService {
         },
         {
             id          : 3,
-            image_url   : 'http://placehold.jp/500x300.png?text=3',
+            image_url   : 'http://localhost:8080/group-3.png',
             site_url    : 'http://localhost:8080/page/3/index.html',
-            name        : 'team3 product name',
-            price       : 3000,
-            overview    : '3班の商品詳細がまだ決まっていないので仮置きの文章です。',
+            name        : '猫のぬいぐるみ',
+            price       : 2000,
+            overview    : 'マフラー、カバン、靴を身につけた手のひらサイズのアメショの猫ちゃんです。',
             created_date: 'Thu Dec 03 2017 21:27:49 GMT+0900 (JST)',
             updated_date: 'Thu Dec 03 2017 21:27:49 GMT+0900 (JST)'
         },

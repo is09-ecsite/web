@@ -1,4 +1,4 @@
-@charset "UTF-8";
+﻿@charset "UTF-8";
 * {
 	padding: 		0;
 	margin:  		0;
@@ -18,42 +18,27 @@
 }
 
 #top {
-	width:				100%;
 	height:				700px;
-	text-align:			center;
 	background-image:	url("../image/BackImage.png");
-}
-
-#name {
-	font-size:	30px;
-	position:	absolute; 
-	top:		100px;
-	left:		120px;
-}
-
-#catchcopy {
-	font-size:	30px;
-	position:	absolute; 
-	top:		100px;
-	right:		120px;
 }
 
 #buyButton_1 {
 	position:	absolute; 
-	bottom:		80px;
+	bottom:		50px;
 	left:		120px;
 }
 
 #leftArea {
 	float:				left;
-	width:				40%;
+	width:				20%;
 	background-color:	white;
 }
 
 #rightArea {
 	float:				right;
-	width:				60%;
-	background-color:	#975520;
+	width:				69%;
+	background-color:	#F0E68C;
+	text-align: center;
 }
 
 .float::after {
@@ -96,7 +81,7 @@
 #circle_4 {
 	position:	relative; 
 	top:		-250px;
-	right:		-458px;
+	right:		-419px;
 }
 
 #shiyou {
@@ -110,6 +95,25 @@
 	position:	relative;
 	top:		10px;
 	left:		-300px;
+	overflow: hidden;
+}
+
+#shiyou_image {
+	margin: 0px 0px 0px 470px; 
+	width: 200px;
+	float: left;
+}
+
+#shiyou_text {
+	width: 500px;
+	overflow: hidden;
+	font-size: 20px;
+}
+
+.float::after {
+	content:	'';
+	display:	table;
+	clear:		 both;
 }
 
 #purchase {

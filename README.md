@@ -53,11 +53,11 @@ $ http-server assets -p 8080
     - price       : 5000
     - overview    : [学校を使いこなすコミュニケーションツール]\n学食の内容や、食事の感想を言い合うアプリが満を持して登場
 - 3
-    - image_url   : 
+    - image_url   : assets/group-3.png
     - site_url    : assets/page/3/index.html
-    - name        : 
-    - price       : 
-    - overview    : 3班の商品詳細がまだ決まっていないので仮置きの文章です。
+    - name        : 猫のぬいぐるみ
+    - price       : 2000
+    - overview    : マフラー、カバン、靴を身につけた手のひらサイズのアメショの猫ちゃんです。
 - 4
     - image_url   : assets/group-4.jpg
     - site_url    : assets/page/4/converted-4han.html
