@@ -1,10 +1,10 @@
 {
-  "name": "web",
-  "version": "0.0.0",
+  "name": "is09-ecsite",
+  "version": "0.0.1",
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "start": "node serve",
+    "start": "node server",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
