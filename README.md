@@ -24,10 +24,18 @@ $ ng serve --open
 $ http-server assets -p 8080
 ```
 
-## Git Update
+## Git pull
+
+```bash
+$ git pull origin master
+$ git submodule foreach git pull origin master
+```
 
 ## Deploy
 
+```bash
+$ git pull heroku master
+```
 
 ## 共有内容
 
