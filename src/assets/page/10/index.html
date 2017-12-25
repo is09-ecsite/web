@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body background="image/背景.jpg" style="width:100%; height:auto;">
+  <!-- Body内は表示する部分 -->
+  <div class="Logo">
+      <h1 style="text-align:center; background-color:fuchsia; color:white;">
+        カスタムアイス
+      </h1>
+  </div>
+
+
+<div class="Product">
+
+
+  <div class="Product-rule">
+    <h2 align="center">
+      <!-- 参照元変更箇所1 -->
+      <img src="image/手順.png"
+      width="60%" height="60%">
+    </h2>
+  </div><!-- Product-name -->
+
+  <div class="Product-main">
+
+      <!-- 商品画像1 -->
+      <table border="1" width="auto" cellspacing="3" cellpadding="7" bordercolor="#333333" bgcolor="#fce5ca" align="center">
+          <tr text-align="center">
+            <!-- 参照元変更箇所2 -->
+            <td align="center"><img src="image/bananaore_Fotor.jpg" style="width:400px; height:300px;"></td>
+
+            <!-- 商品説明1 -->
+            <td valign="middle">
+              <h3>IS09カスタムアイス</h3>
+              <p>自分好みにおいしさ倍増！
+              <br>「ベース＋アイス＋トッピング」であなただけのアイスが作れます。
+              <br>
+              <br>おすすめは「ピザ＋バニラ＋あんこ」の和洋MIXピザアイスです！
+
+              </p>
+            </td>
+          </tr><!-- 商品1終了 -->
+
+      <tr><!-- トッピング -->
+            <td>
+              <!-- 参照元変更箇所3 -->
+
+			<SCRIPT LANGUAGE="JavaScript">
+
+			 function Gazou(mysrc){
+			document.myIMG.src=mysrc;
+			}
+
+			</SCRIPT>
+			<center>
+			<img name="myIMG" src="image/コーン.jpg" border="0" width="400" height="300">
+			<br>
+			</center>
+			<td>
+			 ベース
+			<FORM>
+			<INPUT type="radio" name="myRB" onClick="Gazou('image/コーン.jpg')" checked>コーン<br>
+			<INPUT type="radio" name="myRB" onClick="Gazou('image/クレープ.jpg')">クレープ<br>
+			<INPUT type="radio" name="myRB" onClick="Gazou('image/ピザ.jpg')">ピザ<br>
+
+			</FORM>
+			</td>
+      </tr>
+           <tr><!-- トッピング2 -->
+            <td>
+              <!-- 参照元変更箇所5 -->
+
+			<SCRIPT LANGUAGE="JavaScript">
+
+			 function Gazou2(mysrc2){
+			document.myIMG2.src=mysrc2;
+			}
+
+			</SCRIPT>
+			<center>
+			<img name="myIMG2" src="image/バニラ.jpg" border="0" width="400" height="300">
+			<br>
+			</center>
+			<td>
+			 アイス
+			<FORM>
+			<INPUT type="radio" name="myRB" onClick="Gazou2('image/バニラ.jpg')" checked>バニラ<br>
+			<INPUT type="radio" name="myRB" onClick="Gazou2('image/チョコアイス.jpg')">チョコレート<br>
+			<INPUT type="radio" name="myRB" onClick="Gazou2('image/抹茶.jpg')">抹茶<br>
+
+			</FORM>
+			</td>
+          </tr>
+
+          <tr><!-- トッピング3 -->
+            <td>
+              <!-- 参照元変更箇所5 -->
+
+			<SCRIPT LANGUAGE="JavaScript">
+
+			 function Gazou3(mysrc3){
+			document.myIMG3.src=mysrc3;
+			}
+
+			</SCRIPT>
+			<center>
+			<img name="myIMG3" src="image/ストロベリー.jpg" border="0" width="400" height="300">
+			<br>
+			</center>
+			<td>
+			 トッピング
+			<FORM>
+			<INPUT type="radio" name="myRB" onClick="Gazou3('image/ストロベリー.jpg')" checked>ストロベリー<br>
+			<INPUT type="radio" name="myRB" onClick="Gazou3('image/オレオ.jpg')">オレオ<br>
+			<INPUT type="radio" name="myRB" onClick="Gazou3('image/あんこ.jpg')">あんこ<br>
+
+			</FORM>
+			</td>
+      </tr>
+      <tr>
+        <!-- 小計 -->
+        <td align="center">
+          <h2>小計</h2>
+        </td>
+        <td align="center">
+          <span style="white-space:nowrap;"><input type="text" size="20" name="Number" style="width:100px">
+          <!-- 個数・値段・削除ボタン -->
+          個
+          </span>
+          <p>￥800 </p>
+          <p align="center" height="30%"><input type="button" value="カートに追加" onclick="window.top.postMessage(JSON.stringify({productId:10}), '*');" style="font-size:120%; cursor:pointer;"></p>
+        </td>
+      </tr>
+
+  </table>
+  <!-- カートに追加ボタン -->
+  </div>
+</div><!-- Product -->
+
+  </body>
+</html>
+</!DOCTYPE>

@@ -104,10 +104,10 @@ $ http-server assets -p 8080
 
 ## 各チーム制作物のmockテスト方法
 
-0. 前提としてビルドが正常に成功し`ng serve --open`にて正常な動作が確認済み
-1. `/assets/page/${teamId}`に各チームの制作物を追加
+0. 前提としてビルドが正常に成功し`npm start`にて正常な動作が確認済み
+1. `/src/assets/page/${teamId}`に各チームの制作物を追加
 2. 制作物のhtmlにあるカートに追加ボタンのonclick属性に`window.top.postMessage(JSON.stringify({productId:${teamId}}), '*');`を追加(`$(teamId)`にはチームIDを入れる)
-3. 商品画像は`/assets/group-${teamId}.{extention}`に追加
+3. 商品画像は`/src/assets/group-${teamId}.{extention}`に追加
 4. `README.md`の`提出状況`に変更点を記述
 5. `/src/app/mock/in-memory-data.service.ts`に変更後の内容を適用
 6. ブラウザにて商品一覧画面(`http://localhost:4200/`)から追加・変更したチームを選択し、正常に各チーム制作物が表示されているか確認
