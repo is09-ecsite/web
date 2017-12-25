@@ -73,9 +73,9 @@ $ http-server assets -p 8080
 - 6
     - image_url   : 
     - site_url    : 
-    - name        : 
-    - price       : 
-    - overview    : 
+    - name        : オーダーメイドジャージ
+    - price       : 3000
+    - overview    : 着心地重視の完全オーダーメイドのジャージです。ちょっとした外出や部屋着、運動用にもぜひご活用ください！
 - 7
     - image_url   : assets/group-7.jpg
     - site_url    : assets/page/7/index.html
