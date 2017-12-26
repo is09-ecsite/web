@@ -1,7 +1,13 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatButtonModule, MatCheckboxModule } from '@angular/material';
+
+import { MatCardModule } from '@angular/material/card';
+import { MatIconModule } from '@angular/material/icon';
+import { MatSelectModule } from '@angular/material/select';
+import { MatToolbarModule } from '@angular/material/toolbar';
 
 
 import { HttpClientModule }    from '@angular/common/http';
@@ -13,7 +19,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { AppRoutingModule } from './app-routing.module';
-import { ButtonComponent } from './button/button.component';
 import { ProductItemComponent } from './product-item/product-item.component';
 import { MyPageComponent } from './my-page/my-page.component';
 import { CartComponent } from './cart/cart.component';
@@ -33,6 +38,11 @@ import { AuthenticationService } from './service/authentication.service';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
+    MatButtonModule,
+    MatCardModule,
+    MatIconModule,
+    MatSelectModule,
+    MatToolbarModule,
 
     // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
     // and returns simulated server responses.
@@ -44,7 +54,6 @@ import { AuthenticationService } from './service/authentication.service';
   declarations: [
     AppComponent,
     ProductListComponent,
-    ButtonComponent,
     ProductItemComponent,
     MyPageComponent,
     CartComponent,

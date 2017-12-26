@@ -1,27 +1,34 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<header>
+<mat-toolbar>
   <div>
     <a routerLink="/">IS09 EC-SITE</a>
   </div>
-  <app-button  
+  <span class="spacer"></span>
+  <button 
+    mat-button
     routerLink="/cart" 
-    bgType="flat"
   >
+    <mat-icon>add_shopping_cart</mat-icon>
     cart
-  </app-button>
+  </button>
   <div *ngIf="authentication; then thenBlock; else elseBlock"></div>
   <ng-template #thenBlock>
-    sign-in中
+    <button  
+      mat-button
+      routerLink="/my-page" 
+    >
+      my-page
+    </button>
   </ng-template>
   <ng-template #elseBlock>
-    <app-button  
+    <button  
+      mat-button
       routerLink="/sign-in" 
-      bgType="flat"
     >
       sign-in
-    </app-button>
+    </button>
   </ng-template>
-</header>
+</mat-toolbar>
 <div class="content">
   <router-outlet></router-outlet>
 </div>

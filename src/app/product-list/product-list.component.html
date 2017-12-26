@@ -1,7 +1,19 @@
 <content class="host">
   <h2>商品一覧</h2>
+  <!-- news -->
+  <div style="
+    background: #e1f5fe;
+    color: #0288d1;
+    font-size: 0.8rem;
+    padding: .5rem 1rem"
+  >
+    <h2>開発者へのおしらせ</h2>
+    <p>一つの商品を複数個買う可能性がある商品の場合、制作物ページに個数を入力するレイアウトにした後、開発班へ連絡していただけましたら適用致します。10班のが現状そのように動いています。
+      個数の上限は現状10個になっています。それ以上を希望がありましたら、同様にご連絡お願いいたします。</p>
+  </div>
+  <!-- news end -->
   <div class="item-wrapper">
-    <div  *ngFor="let product of products" class="item">
+    <mat-card  *ngFor="let product of products" class="item">
       <a class="img-wrapper" routerLink="/products/{{product.id}}">
         <img src="{{product.image_url}}">
       </a>
@@ -11,7 +23,7 @@
         </a>
         <span class="product-overview">{{product.overview}}</span>
       </div>
-    </div>
+    </mat-card>
     <span class="flex-space"></span>
   </div>
 </content>

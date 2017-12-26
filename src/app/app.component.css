@@ -1,19 +1,7 @@
-header {
-    align-items     : center;
+mat-toolbar {
     background-color: #5EC84E;
-    box-shadow      : 0 2px 5px 0 rgba(0,0,0,.3);
-    color           : white;
-    display         : flex;
-    height          : 52px;
-    padding         : 0 20px;
-    position        : fixed;
-    top             : 0;
-    width           : calc(100vw - 40px);
+    box-shadow      : 0 3px 5px -1px rgba(0,0,0,.2), 0 6px 10px 0 rgba(0,0,0,.14), 0 1px 18px 0 rgba(0,0,0,.12);
     z-index         : 1;
-}
-
-header > :nth-child(1) {
-    flex-grow  : 1;
 }
 
 a {
@@ -21,11 +9,14 @@ a {
     font-size  : 1.7rem;
 }
 
-header > :nth-child(2) {
-    
+.icon {
+    padding: 0 14px;
+}
+
+.spacer {
+    flex: 1 1 auto;
 }
 
 .content {
-    margin-top: 52px;
-    z-index   : 0;
+    z-index: 0;
 }

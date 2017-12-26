@@ -18,19 +18,18 @@ export class Struct {
 })
 export class CartComponent implements OnInit, OnDestroy {
 
-  countList    = [...Array(10)].map((x,i)=>i+1);
+  // countList    = [...Array(10)].map((x,i) => ({value: i+1}));
+  // js は難しい
+  countList    = [{value: 1},{value: 2},{value: 3},{value: 4},{value: 5},{value: 6},{value: 7},{value: 8},{value: 9},{value: 10}]
   products     : Product[] = [];
   protectedCart: Cart[] = [];
   structs      : Struct[] = [];
   subscribeId  : string;
 
-  years = [2010,2011,2012,2013,2014];
-  selectedYear = 2014;
-
   constructor(
     private cartService: CartService,
     private productService: ProductService
-  ) { }
+  ) { console.log(this.countList)}
 
   ngOnInit() {
     this.productService.getProducts()
@@ -47,9 +46,16 @@ export class CartComponent implements OnInit, OnDestroy {
     this.subscribeId && this.cartService.unsubscribe(this.subscribeId);
   }
 
-  chageCount(productId: number, event) {
-    console.log('chageCount');
-    console.log(productId, parseInt(event.target.selectedOptions[0].value));
+  changeCount(struct: Struct) {
+    this.cartService.setCarts(
+      this.cartService
+        .getCarts()
+        .map(x => {
+          if (x.id == struct.product.id)
+            x.purchaseNumber = struct.count
+          return x
+        })
+    )
   }
 
   clearCart() {

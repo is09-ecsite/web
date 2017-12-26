@@ -1,43 +1,43 @@
 <section class="host">
   <app-list>
-    <div class="cart-management-header">
-      <app-button bgType="flat" (click)="clearCart()">
+    <mat-card class="cart-management-header">
+      <button mat-button (click)="clearCart()">
         空にする
-      </app-button>
+      </button>
       <span class="flexible-space"></span>
-      <app-button bgType="flat" routerLink="/settlement">
+      <button mat-button routerLink="/settlement">
         レジに進む
-      </app-button>
-    </div>
+      </button>
+    </mat-card>
+
     <app-list-item *ngFor="let struct of structs" class="item">
       <div class="item-content">
         <a class="img-wrapper" routerLink="/products/{{struct.product.id}}">
           <img src="{{struct.product.image_url}}">
         </a>
         <div class="product-info">
-          <a routerLink="/products/{{struct.product.id}}">{{struct.product.name}}</a>
-          <div>{{struct.product.overview}}</div>
+          <a routerLink="/products/{{struct.product.id}}"><mat-card-title>{{struct.product.name}}</mat-card-title></a>
+          <mat-card-subtitle>{{struct.product.overview}}</mat-card-subtitle>
         </div>
         <div>
-          <div>単価 : {{struct.product.price}} 円</div>
-          <div>個数 : {{struct.count}}</div>
-          <select ngModel="selectedYear" ngOptions="let year of years"></select>
-<!-- 
-          <select name="count"  (change)="chageCount(struct.product.id, $event)" required>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3" ngSelected="true">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="6">6</option>
-            <option value="7">7</option>
-            <option value="8">8</option>
-            <option value="9">9</option>
-            <option value="10">10</option>
-          </select> -->
-          <app-button bgType="flat" fontColor="black" (click)="clearCartById(struct.product.id)">
-            削除
-          </app-button>
+          <div>単　価 : {{struct.product.price}} 円</div>
+          <div>合計金額 : {{struct.product.price}} 円</div>
+          <div>
+            <mat-form-field>
+              <mat-select
+                placeholder="購入数"
+                [(value)]="struct.count"
+                (change)="changeCount(struct)"
+              >
+                <mat-option *ngFor="let n of countList" [value]="n.value">
+                  {{n.value}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+            <button mat-button (click)="clearCartById(struct.product.id)" color="warn">
+              削除
+            </button>
+          </div>
         </div>
       </div>
     </app-list-item>

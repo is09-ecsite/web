@@ -37,8 +37,8 @@ export class InMemoryDataService implements InMemoryDbService {
             id          : 4,
             image_url   : '/assets/group-4.jpg',
             site_url    : '/assets/page/4/converted-4han.html',
-            name        : 'team4 product name',
-            price       : 4000,
+            name        : 'はちマイ',
+            price       : 500,
             overview    : 'あなたの知らないスポットを探し出し、みんでシェアして一歩リード！',
             created_date: 'Thu Dec 04 2017 21:27:49 GMT+0900 (JST)',
             updated_date: 'Thu Dec 04 2017 21:27:49 GMT+0900 (JST)'
