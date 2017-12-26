@@ -52,8 +52,8 @@ export class CartComponent implements OnInit, OnDestroy {
         .getCarts()
         .map(x => {
           if (x.id == struct.product.id)
-            x.purchaseNumber = struct.count
-          return x
+            x.purchaseNumber = struct.count;
+          return x;
         })
     )
   }
@@ -87,5 +87,12 @@ export class CartComponent implements OnInit, OnDestroy {
           return struct;
         })
     );
+  }
+
+  getTotalPrice(): number{
+    return (
+      this.structs.map(x => x.product.price * x.count)
+        .reduce((p, n) => p + n, 0)
+    )
   }
 }

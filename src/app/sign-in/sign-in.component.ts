@@ -33,6 +33,7 @@ export class SignInComponent implements OnInit {
     let giftCode4 = event.target.elements["giftCode4"].value;
 
     const giftCode = giftCode1 + giftCode2 + giftCode3 + giftCode4;
+    console.log(giftCode, 'gift code');
     
     this.authenticationService.createAuthentication(giftCode)
       .subscribe(Authentication => {

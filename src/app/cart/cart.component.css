@@ -8,13 +8,10 @@
 .cart-management-header {
     align-items     : center;
     background-color: rgba(106, 140, 199, 1);
+    color           : #fafbfd;
     display         : flex;
     padding         : .5rem 24px;
     z-index         : 1;
-}
-
-.cart-management-header button {
-    color: white;
 }
 
 .flexible-space {
@@ -24,7 +21,6 @@
 app-list {
     background-color: #fafbfd;
     margin-bottom   : 80px;
-    min-width       : 800px;
     width           : 80%;
 }
 
@@ -33,10 +29,10 @@ app-list {
     display        : flex;
     justify-content: center;
     margin         : 1rem; 
-    max-height     : 120px;
-    max-width      : 200px;
-    min-height     : 120px;
-    min-width      : 200px;
+    max-height     : 9rem;
+    max-width      : 15rem;
+    min-height     : 9rem;
+    min-width      : 15rem;
     overflow       : hidden;
 }
 
@@ -44,8 +40,8 @@ img {
     background-position: center;
     background-repeat  : no-repeat;
     background-size    : cover;
-    max-height         : 120px;
-    max-width          : 200px;
+    max-height         : 9rem;
+    max-width          : 15rem;
     transition         : all .2s ease-out;
 }
 
@@ -98,3 +94,9 @@ app-list-item+app-list-item {
     max-width: 100%;
     width: auto;
 }  
+
+@media (max-width: 767px) {
+    .item-content > :first-child {
+        display: none;
+    }
+}
