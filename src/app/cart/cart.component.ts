@@ -24,6 +24,9 @@ export class CartComponent implements OnInit, OnDestroy {
   structs      : Struct[] = [];
   subscribeId  : string;
 
+  years = [2010,2011,2012,2013,2014];
+  selectedYear = 2014;
+
   constructor(
     private cartService: CartService,
     private productService: ProductService

@@ -34,15 +34,23 @@ export class CartService {
               if (cart) {
                 this.setCarts(
                   this.getCarts().map(c => {
-                    if (c.id == data.id) 
-                      c.purchaseNumber++;
+                    if (c.id == data.productId) {
+                      if(data.purchaseNumber)
+                        c.purchaseNumber+= parseInt(data.purchaseNumber);
+                      else 
+                        c.purchaseNumber++;
+                    }
                     return c;
                   })
                 )
               } else {
-                let newCart = new Cart()
+                let newCart = new Cart();
                 newCart.id = data.productId;
-                newCart.purchaseNumber = 1;
+                
+                if(data.purchaseNumber)
+                  newCart.purchaseNumber = parseInt(data.purchaseNumber);
+                else 
+                  newCart.purchaseNumber = 1;
                 this.setCarts(
                   this.getCarts().concat(newCart)
                 )

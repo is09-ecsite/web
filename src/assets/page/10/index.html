@@ -126,12 +126,12 @@
           <h2>小計</h2>
         </td>
         <td align="center">
-          <span style="white-space:nowrap;"><input type="text" size="20" name="Number" style="width:100px">
+          <span style="white-space:nowrap;"><input required id="count" type="text" size="20" name="Number" style="width:100px">
           <!-- 個数・値段・削除ボタン -->
           個
           </span>
           <p>￥800 </p>
-          <p align="center" height="30%"><input type="button" value="カートに追加" onclick="window.top.postMessage(JSON.stringify({productId:10}), '*');" style="font-size:120%; cursor:pointer;"></p>
+          <p align="center" height="30%"><input type="button" value="カートに追加" onclick="window.top.postMessage(JSON.stringify({productId:10,purchaseNumber:document.querySelector('#count').value}), '*');" style="font-size:120%; cursor:pointer;"></p>
         </td>
       </tr>
 

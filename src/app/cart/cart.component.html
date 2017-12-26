@@ -20,8 +20,10 @@
         </div>
         <div>
           <div>単価 : {{struct.product.price}} 円</div>
-          <!-- for of がうまく動作しなかった。-->
-          <!-- <select name="count"  (change)="chageCount(struct.product.id, $event)" required>
+          <div>個数 : {{struct.count}}</div>
+          <select ngModel="selectedYear" ngOptions="let year of years"></select>
+<!-- 
+          <select name="count"  (change)="chageCount(struct.product.id, $event)" required>
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3" ngSelected="true">3</option>

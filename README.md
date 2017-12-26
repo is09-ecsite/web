@@ -111,7 +111,7 @@ $ git push heroku master
     - overview    : ニュースも見れるスケジュール管理アプリが登場！学校生活、就職活動で使える便利な機能が盛りだくさん！！
 - 9
     - image_url   : /src/assets/group-9.jpg
-    - site_url    : /src/assets/page/9/index.html
+    - site_url    : /src/assets/page/9/CollegeMap.html
     - name        : CollegeMap
     - price       : 480
     - overview    : 一目で分かる校内地図、ネット環境。地図の画像を決めるコンテストなど！また君だけのオリジナルのアバターを作り楽しもう！
@@ -121,7 +121,7 @@ $ git push heroku master
     - name        : IS09カスタムアイス
     - price       : 800
     - overview    : 自分好みにおいしさ倍増！ 「ベース＋アイス＋トッピング」であなただけのアイスが作れます。
-    
+
 ## 各チーム制作物のmockテスト方法
 
 0. 前提としてビルドが正常に成功し`npm start`にて正常な動作が確認済み
