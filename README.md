@@ -3,28 +3,51 @@ EC-site Main Web
 
 ## Overview
 
-IS09 Client side web on Angular
-
-## Installation
+IS09 Client side ecsite-web on Angular
 
 Document
 https://angular.io/docs
 
-## Example 
+## Quick Start
 
 ```bash
-$ git clone http://$ipaddress/IS09/web.git
+$ git clone --recursive git@bitbucket.org:is09ecsite/web.git
+$ npm install
+$ ng server --open
+```
+
+## Installation
+
+```bash
+$ npm install
+```
+
+## Server
+
+http server that performs automatic build and page update by update detection. 
+```bash
+$ ng server --open
+```
+
+Must be pre-built. 
+http server for production.
+```
+$ npm start
 ```
 
 ## Build
 
 Development:
 ```bash
-$ ng serve --open
-$ http-server assets -p 8080
+$ npm run-script build
 ```
 
-## Git pull
+Production:
+```bash
+$ npm run-script postinstall
+```
+
+## Git Update
 
 ```bash
 $ git pull origin master
@@ -34,18 +57,8 @@ $ git submodule foreach git pull origin master
 ## Deploy
 
 ```bash
-$ git pull heroku master
+$ git push heroku master
 ```
-
-## 共有内容
-
-- /src/assets
-    - 各班から送られたhtml及び画像
-- /src/app/mock/in-memory-data.service.ts
-    - mockserver
-- /src/app/service/URL.ts
-    - URL情報一覧
-
 
 ## 提出状況
 - 1
@@ -124,3 +137,46 @@ $ git pull heroku master
 9. 8にて追加を確認した商品を「削除」ボタンを押した時に、正常にカートから削除されているか確認
 10. 0~10の全てが確認されてからgitでremoteに変更をpush
 
+
+- 使用コマンド群
+  - git
+  - node
+  - npm
+  - ng(angular)
+- 実行方法
+
+- ファイル　
+    - src/assets
+        - group-*.{extention}
+            - チームごとの商品画像
+        - page/*
+            - チームごとのページhtml
+    - src/app/
+        - app-routing.module.ts
+            - URLrouting処理
+        - app.*
+            - メインフレーム処理
+        - button
+            - ボタンコンポーネント
+        - list
+            - リストコンポーネント
+        - list-item
+            - リストアイテムコンポーネント
+        + cart
+            - カートページコンポーネント
+        + my-page
+            - マイページコンポーネント
+        + product-list
+            - 商品一覧コンポーネント
+        + product-item
+            - 商品詳細コンポーネント
+        + settlement
+            - 決済画面コンポーネント
+        + sign-in
+            - サインインコンポーネント
+        * mock
+            - mock-server設定
+        * service
+            - 各サービス(model)
+        * struct
+            - 構造体一覧
