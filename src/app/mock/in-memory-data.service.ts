@@ -86,9 +86,9 @@ export class InMemoryDataService implements InMemoryDbService {
         {
             id          : 9,
             image_url   : '/assets/group-9.jpg',
-            site_url    : '/assets/page/9/index.html',
+            site_url    : '/assets/page/9/CollegeMap.html',
             name        : 'CollegeMap',
-            price       : 9000,
+            price       : 480,
             overview    : '一目で分かる校内地図、ネット環境。地図の画像を決めるコンテストなど！また君だけのオリジナルのアバターを作り楽しもう！',
             created_date: 'Thu Dec 05 2017 21:27:49 GMT+0900 (JST)',
             updated_date: 'Thu Dec 05 2017 21:27:49 GMT+0900 (JST)'

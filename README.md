@@ -113,7 +113,7 @@ $ git push heroku master
     - image_url   : /src/assets/group-9.jpg
     - site_url    : /src/assets/page/9/index.html
     - name        : CollegeMap
-    - price       : 
+    - price       : 480
     - overview    : 一目で分かる校内地図、ネット環境。地図の画像を決めるコンテストなど！また君だけのオリジナルのアバターを作り楽しもう！
 - 10
     - image_url   : /src/assets/group-10.jpg
@@ -121,8 +121,7 @@ $ git push heroku master
     - name        : IS09カスタムアイス
     - price       : 800
     - overview    : 自分好みにおいしさ倍増！ 「ベース＋アイス＋トッピング」であなただけのアイスが作れます。
-
-
+    
 ## 各チーム制作物のmockテスト方法
 
 0. 前提としてビルドが正常に成功し`npm start`にて正常な動作が確認済み
