@@ -29,6 +29,10 @@ export class AuthenticationService {
 
   /** create authentication by gift code. Will 404 if id not found */
   createAuthentication(giftCode: string): Observable<Authentication> {
+
+    // TODO Product Migration
+    // remove following debug code when a real server is ready to receive requests.
+    // debug
     return this.http.get<Authentication>(URL.v1.auth).pipe(
       tap(authentication => {
         this.authentication = authentication;
@@ -39,6 +43,19 @@ export class AuthenticationService {
       }),
       catchError(this.handleError<Authentication>(`createAuthentication`))
     );
+
+    // product
+    return this.http.post<Authentication>(URL.v1.auth, {gift_code: giftCode}).pipe(
+      tap(authentication => {
+        this.authentication = authentication;
+        localStorage.setItem("token", authentication.token);
+        for (let subscribe of this.subscribers)
+          subscribe.listener(authentication);
+        this.log(`fetched authentication`);
+      }),
+      catchError(this.handleError<Authentication>(`createAuthentication`))
+    );
+
   };
 
   getAuthentication(): Authentication {

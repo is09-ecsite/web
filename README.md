@@ -8,6 +8,8 @@ IS09 Client side ecsite-web on Angular
 Document
 https://angular.io/docs
 
+ソースが部分的にmock server用になっているので本番環境用APIサーバーへの移行時には // TODO Product Migration を全て修正してください。
+
 ## Quick Start
 
 ```bash
