@@ -63,7 +63,7 @@ app-list-item+app-list-item {
     justify-content: center;
     margin-left    : 1rem;
     max-width      : 180px;
-    min-width      : 200px;
+    min-width      : 180px;
 }
 
 .item-content > :last-child > :last-child {
@@ -114,5 +114,7 @@ app-list-item+app-list-item {
         flex-direction : row;
         justify-content: space-between;
         width          : 100%;
+        max-width      : initial;
+        min-width      : initial;
     }
 }
