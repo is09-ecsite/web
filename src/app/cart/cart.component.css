@@ -53,6 +53,7 @@ app-list-item+app-list-item {
     display: flex;
 }
 
+
 .item-content > :last-child {
     align-items    : center;
     display        : flex;
@@ -61,7 +62,8 @@ app-list-item+app-list-item {
     font-size      : 0.9rem;
     justify-content: center;
     margin-left    : 1rem;
-    width          : 200px;
+    max-width      : 180px;
+    min-width      : 200px;
 }
 
 .item-content > :last-child > :last-child {
@@ -74,6 +76,7 @@ app-list-item+app-list-item {
 .product-info {
     display        : flex;
     flex-direction : column;
+    flex-grow      : 1;
     justify-content: center;
 }
 
