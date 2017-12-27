@@ -33,7 +33,7 @@
                 [(value)]="struct.count"
                 (change)="changeCount(struct)"
               >
-                <mat-option *ngFor="let n of countList" [value]="n.value">
+                <mat-option *ngFor="let n of countList" [value]="n.value" (closed)="onCollapse()" (opened)="onExpand()">
                   {{n.value}}
                 </mat-option>
               </mat-select>
