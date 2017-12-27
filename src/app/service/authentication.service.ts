@@ -31,7 +31,7 @@ export class AuthenticationService {
   createAuthentication(giftCode: string): Observable<Authentication> {
 
     // TODO Product Migration
-    // remove following debug code when a real server is ready to receive requests.
+    // remove following debug code and delete comment out production code when a real server is ready to receive requests.
     // debug
     return this.http.get<Authentication>(URL.v1.auth).pipe(
       tap(authentication => {
@@ -45,16 +45,16 @@ export class AuthenticationService {
     );
 
     // product
-    return this.http.post<Authentication>(URL.v1.auth, {gift_code: giftCode}).pipe(
-      tap(authentication => {
-        this.authentication = authentication;
-        localStorage.setItem("token", authentication.token);
-        for (let subscribe of this.subscribers)
-          subscribe.listener(authentication);
-        this.log(`fetched authentication`);
-      }),
-      catchError(this.handleError<Authentication>(`createAuthentication`))
-    );
+    // return this.http.post<Authentication>(URL.v1.auth, {gift_code: giftCode}).pipe(
+    //   tap(authentication => {
+    //     this.authentication = authentication;
+    //     localStorage.setItem("token", authentication.token);
+    //     for (let subscribe of this.subscribers)
+    //       subscribe.listener(authentication);
+    //     this.log(`fetched authentication`);
+    //   }),
+    //   catchError(this.handleError<Authentication>(`createAuthentication`))
+    // );
 
   };
 
