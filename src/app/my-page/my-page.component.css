@@ -2,7 +2,35 @@
     align-items   : center;
     display       : flex;
     flex-direction: column;
-    margin        : 90px 80px 0 80px;
+    padding-top   : 2rem;
+}
+
+.my-page-header {
+    align-items     : center;
+    background-color: rgba(106, 140, 199, 1);
+    color           : #fafbfd;
+    display         : flex;
+    padding         : .5rem 24px;
+    z-index         : 1;
+}
+
+.my-page-subheader {
+    align-items     : center;
+    background-color: rgb(130, 155, 197);
+    color           : #fafbfd;
+    display         : flex;
+    padding         : .1rem 24px;
+    z-index         : 2;
+}
+
+.flexible-space {
+    flex-grow: 1;
+}
+
+app-list {
+    background-color: #fafbfd;
+    margin-bottom   : 80px;
+    width           : 80%;
 }
 
 .main-state {

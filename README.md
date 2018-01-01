@@ -8,6 +8,8 @@ IS09 Client side ecsite-web on Angular
 Document
 https://angular.io/docs
 
+ソースが部分的にmock server用になっているので本番環境用APIサーバーへの移行時には // TODO Product Migration を全て修正してください。
+
 ## Quick Start
 
 ```bash
@@ -122,6 +124,12 @@ $ git push heroku master
     - price       : 800
     - overview    : 自分好みにおいしさ倍増！ 「ベース＋アイス＋トッピング」であなただけのアイスが作れます。
 
+## 開発環境構築手順
+1. bitbucketのアカウントを作成　
+2. 作成したアカウントをbitbucket is09 group admin権限所持者に報告し、連携
+3. git, node v9, npmをインストール
+4. README.md Quick Startを参照
+
 ## 各チーム制作物のmockテスト方法
 
 0. 前提としてビルドが正常に成功し`npm start`にて正常な動作が確認済み
@@ -135,7 +143,6 @@ $ git push heroku master
 8. headerのcartボタンからカート画面(`http://localhost:4200/cart`)に移動し、カート内に商品が追加されているか確認
 9. 8にて追加を確認した商品を「削除」ボタンを押した時に、正常にカートから削除されているか確認
 10. 0~10の全てが確認されてからgitでremoteに変更をpush
-
 
 - 使用コマンド群
   - git
@@ -155,8 +162,6 @@ $ git push heroku master
             - URLrouting処理
         - app.*
             - メインフレーム処理
-        - button
-            - ボタンコンポーネント
         - list
             - リストコンポーネント
         - list-item

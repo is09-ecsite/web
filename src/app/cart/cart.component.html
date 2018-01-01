@@ -22,8 +22,10 @@
           <mat-card-subtitle>{{struct.product.overview}}</mat-card-subtitle>
         </div>
         <div>
-          <div>単　価 : {{struct.product.price}} 円</div>
-          <div>合計金額 : {{struct.product.price * struct.count}} 円</div>
+          <div class="price">
+            <div><span>単価</span><span>{{struct.product.price}} 円</span></div>
+            <div><span>合計金額</span><span>{{struct.product.price * struct.count}} 円</span></div>
+          </div>
           <div>
             <mat-form-field>
               <mat-select
@@ -31,7 +33,7 @@
                 [(value)]="struct.count"
                 (change)="changeCount(struct)"
               >
-                <mat-option *ngFor="let n of countList" [value]="n.value">
+                <mat-option *ngFor="let n of countList" [value]="n.value" (closed)="onCollapse()" (opened)="onExpand()">
                   {{n.value}}
                 </mat-option>
               </mat-select>
