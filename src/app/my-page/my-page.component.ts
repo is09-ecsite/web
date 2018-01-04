@@ -7,10 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MyPageComponent implements OnInit {
 
-  constructor() { 
+  constructor() {
   }
 
-  ngOnInit() {
+  ngOnInit(): void {
+  }
+
+  struct = {
+    product: {
+      id: null,
+      image_url: null
+    }
   }
 
 }
