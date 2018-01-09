@@ -30,6 +30,7 @@ import { CartService } from './service/cart.service';
 import { ListComponent } from './list/list.component';
 import { ListItemComponent } from './list-item/list-item.component';
 import { AuthenticationService } from './service/authentication.service';
+import { SettlementService } from './service/settlement.service';
 
 @NgModule({
   imports: [
@@ -66,7 +67,7 @@ import { AuthenticationService } from './service/authentication.service';
     ListComponent,
     ListItemComponent
   ],
-  providers: [ProductService, CartService, AuthenticationService],
+  providers: [ProductService, CartService, AuthenticationService, SettlementService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
