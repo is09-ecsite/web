@@ -6,7 +6,7 @@ export class InMemoryDataService implements InMemoryDbService {
         {
             id          : 1,
             image_url   : '/assets/group-1.png',
-            site_url    : 'https://itoanimation.wixsite.com/home',
+            site_url    : '/assets/page/1/index.html',
             name        : 'Shareledge',
             price       : 1000,
             overview    : '「教えて欲しい」と「誰かに教えたい」そんな気持ちをマッチング! 交流型知識共有サービス',
@@ -108,7 +108,13 @@ export class InMemoryDataService implements InMemoryDbService {
 
     const auth = {
         token: "test-token"
-    }
+    };
+
+    const settelement = [
+
+    ];
+
+    
     
     return {products, auth};
   }
