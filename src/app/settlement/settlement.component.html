@@ -1,3 +1,49 @@
-<p>
-  settlement works!
-</p>
+<section class="host">
+  <app-list>
+    <mat-card class="cart-management-header">
+      <div>合計金額 : {{getTotalPrice()}} 円</div>
+      <span class="flexible-space"></span>
+
+      <button mat-button (click)="clearCart()">
+        空にする
+      </button>
+      <button mat-button routerLink="/settlement">
+        レジに進む
+      </button>
+    </mat-card>
+
+    <app-list-item *ngFor="let struct of structs" class="item">
+      <div class="item-content">
+        <a class="img-wrapper" routerLink="/products/{{struct.product.id}}">
+          <img src="{{struct.product.image_url}}">
+        </a>
+        <div class="product-info">
+          <a routerLink="/products/{{struct.product.id}}"><mat-card-title>{{struct.product.name}}</mat-card-title></a>
+          <mat-card-subtitle>{{struct.product.overview}}</mat-card-subtitle>
+        </div>
+        <div>
+          <div class="price">
+            <div><span>単価</span><span>{{struct.product.price}} 円</span></div>
+            <div><span>合計金額</span><span>{{struct.product.price * struct.count}} 円</span></div>
+          </div>
+          <div>
+            <mat-form-field>
+              <mat-select
+                placeholder="購入数"
+                [(value)]="struct.count"
+                (change)="changeCount(struct)"
+              >
+                <mat-option *ngFor="let n of countList" [value]="n.value" (closed)="onCollapse()" (opened)="onExpand()">
+                  {{n.value}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+            <button mat-button (click)="clearCartById(struct.product.id)" color="warn">
+              削除
+            </button>
+          </div>
+        </div>
+      </div>
+    </app-list-item>
+  </app-list>
+</section>

@@ -36,7 +36,7 @@ export class CartComponent implements OnInit, OnDestroy {
       .subscribe(products => {
         this.products = products;
 
-        this.subscribeId = this.cartService.subscribe(carts => 
+        this.subscribeId = this.cartService.subscribe(carts =>
           this.structs = this.toStructs(products, carts)
         );
       });
@@ -74,7 +74,7 @@ export class CartComponent implements OnInit, OnDestroy {
 
     this.structs = this.toStructs(this.products, carts);
   }
-  
+
   private toStructs(products: Product[], carts: Cart[]): Struct[] {
     const cartIds = carts.map(c => c.id);
 
