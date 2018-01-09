@@ -30,7 +30,7 @@ export class SettlementComponent implements OnInit {
     private productService: ProductService,
     private settlementService: SettlementService
   ) { console.log(this.settlementService);
-    settlementService.subscribe((product) => this.products = product, (cart) => this.cart = cart);
+    //settlementService.subscribe((product) => this.products = product, (cart) => this.cart = cart);
   }
 
   ngOnInit() {
