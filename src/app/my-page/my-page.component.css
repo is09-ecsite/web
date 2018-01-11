@@ -82,3 +82,21 @@ app-list-item+app-list-item {
     justify-content: center;
     margin-top     : 1rem;
 }
+
+.product-info {
+    display        : flex;
+    flex-direction : column;
+    flex-grow      : 1;
+    justify-content: center;
+}
+
+.price {
+    display       : flex;
+    flex-direction: column;
+    text-align    : right;
+}
+
+.price > div > :first-child {
+    float : left;
+    margin: 0 1rem;
+}

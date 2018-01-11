@@ -12,13 +12,23 @@
         <div>合計<br>￥xxx,xxx</div>
       </mat-card>
     </mat-card>
-
-    <app-list-item class="item">
-        <div class="item-content">
-          <a class="img-wrapper" routerLink="/products/{{struct.product.id}}">
-            <img src="{{struct.product.image_url}}">
-          </a>
+    <app-list-item *ngFor="let struct of structs" class="item">
+      <div class="item-content">
+        <a class="img-wrapper" routerLink="/products/{{struct.product.id}}">
+          <img src="{{struct.product.image_url}}">
+        </a>
+        <div class="product-info">
+          <a routerLink="/products/{{struct.product.id}}"><mat-card-title>{{struct.product.name}}</mat-card-title></a>
+          <mat-card-subtitle>{{struct.product.overview}}</mat-card-subtitle>
         </div>
+        <div>
+          <div class="price">
+            <div><span>単価</span><span>{{struct.product.price}} 円</span></div>
+            <div></div>
+            <div><span>合計金額</span><span>{{struct.product.price * struct.count}} 円</span></div>
+          </div>
+        </div>
+      </div>
     </app-list-item>
   </app-list>
 </section>
@@ -34,4 +44,23 @@
         <mat-card-subtitle>{{struct.product.overview}}</mat-card-subtitle>
       </div>
     </app-list-item>
+    ---------------------------------------------
+    <app-list-item class="item">
+        <div class="item-content">
+          <a class="img-wrapper" routerLink="/products/{{struct.product.id}}">
+            <img src="/assets/group-2.jpg">
+          </a>
+          <div class="product-info">
+            <a routerLink="/products/{{struct.product.id}}"><mat-card-title>Comeal</mat-card-title></a>
+            <mat-card-subtitle>[学校を使いこなすコミュニケーションツール]/n学食の内容や、食事の感想を言い合うアプリが満を持して登場</mat-card-subtitle>
+          </div>
+          <div>
+            <div class="price">
+              <div><span>単価</span><span>2000 円</span></div>
+              <div><span>合計金額</span><span>{{struct.product.price * struct.count}} 円</span></div>
+            </div>
+          </div>
+        </div>
+    </app-list-item>
+    
   -->
