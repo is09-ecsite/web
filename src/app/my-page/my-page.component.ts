@@ -16,7 +16,7 @@ export class MyPageComponent implements OnInit {
     let s = new Settlement()
     s.id = i;
     
-    s.transiton = [1, 2].map(y => {
+    s.transitions = [1, 2].map(y => {
       let t = new Transition()
       t.product_id = y;
       t.price = y * 1000;

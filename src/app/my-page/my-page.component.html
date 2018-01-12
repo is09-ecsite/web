@@ -12,7 +12,7 @@
         <div>合計<br>￥xxx,xxx</div>
       </mat-card>
     </mat-card>
-    <app-list-item *ngFor="let struct of structs" class="item">
+    <app-list-item *ngFor="let struct of struct" class="item">
       <div class="item-content">
         <a class="img-wrapper" routerLink="/products/{{struct.product.id}}">
           <img src="{{struct.product.image_url}}">
