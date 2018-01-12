@@ -86,6 +86,7 @@ export class SettlementComponent implements OnInit {
     })
 
     this.settlementService.addSettlement(settlement).subscribe(_ => {
+      this.cartService.setCarts([]);
       this.router.navigate(["/my-page"]);
     })
   }
