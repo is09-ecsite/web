@@ -5,23 +5,18 @@ import { Observable } from 'rxjs/Observable';
 import { of } from 'rxjs/observable/of';
 import { catchError, map, tap } from 'rxjs/operators';
 
-import { CartService } from '../service/cart.service';
+import { AuthenticationService } from '../service/authentication.service';
 
 import { Settlement } from './../struct/settlement';
-import { Cart } from './../struct/cart';
 import { URL } from './URL';
 
-
-const httpOptions = {
-  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
-};
 
 @Injectable()
 export class SettlementService {
 
   constructor(
-    private http: HttpClient,
-    private cart: CartService,
+    private authenticationService : AuthenticationService,
+    private http                  : HttpClient,
   ) { }
 
   /** GET settlements from the server */
@@ -72,7 +67,13 @@ export class SettlementService {
 
   /** POST: add a new settlement to the server */
   addSettlement (settlement: Settlement): Observable<Settlement> {
-    return this.http.post<Settlement>(URL.v1.settlements, settlement, httpOptions).pipe(
+    return this.http.post<Settlement>(
+      URL.v1.settlements, settlement, 
+      {
+        headers: new HttpHeaders().set( 'Content-Type', 'application/json' )
+                                  .set( 'Authorization', this.authenticationService.getAuthentication().token)
+      }
+    ).pipe(
       tap((settlement: Settlement) => this.log(`added settlement w/ id=${settlement.id}`)),
       catchError(this.handleError<Settlement>('addSettlement'))
     );
@@ -83,7 +84,13 @@ export class SettlementService {
     const id = typeof settlement === 'number' ? settlement : settlement.id;
     const url = `${URL.v1.settlements}/${id}`;
 
-    return this.http.delete<Settlement>(url, httpOptions).pipe(
+    return this.http.delete<Settlement>(
+      url,
+      {
+        headers: new HttpHeaders().set( 'Content-Type', 'application/json' )
+                                  .set( 'Authorization', this.authenticationService.getAuthentication().token)
+      }
+    ).pipe(
       tap(_ => this.log(`deleted settlement id=${id}`)),
       catchError(this.handleError<Settlement>('deleteSettlement'))
     );
@@ -91,7 +98,14 @@ export class SettlementService {
 
   /** PUT: update the settlement on the server */
   updateSettlement (settlement: Settlement): Observable<any> {
-    return this.http.put(URL.v1.settlements, settlement, httpOptions).pipe(
+    return this.http.put(
+      URL.v1.settlements,
+      settlement,
+      {
+        headers: new HttpHeaders().set( 'Content-Type', 'application/json' )
+                                  .set( 'Authorization', this.authenticationService.getAuthentication().token)
+      }
+    ).pipe(
       tap(_ => this.log(`updated settlement id=${settlement.id}`)),
       catchError(this.handleError<any>('updateSettlement'))
     );

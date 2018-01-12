@@ -4,6 +4,7 @@ import { Product } from '../struct/product';
 import { Settlement } from '../struct/settlement';
 import { Transition } from '../struct/transition';
 
+import { AuthenticationService } from '../service/authentication.service';
 import { ProductService } from "../service/product.service";
 import { SettlementService } from "../service/settlement.service";
 
@@ -19,8 +20,9 @@ export class MyPageComponent implements OnInit {
   structs = [];
 
   constructor(
-    private productService   : ProductService,
-    private settlementService: SettlementService
+    private authenticationService : AuthenticationService,
+    private productService        : ProductService,
+    private settlementService     : SettlementService
   ) {  }
 
   ngOnInit(): void {
