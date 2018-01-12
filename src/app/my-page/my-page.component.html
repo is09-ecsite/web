@@ -1,39 +1,38 @@
 <section class="host">
-  <app-list>
+  <app-list *ngFor="let struct of structs">
     <mat-card class="my-page-header">
       <mat-card class="my-page-subheader">
-        <div>注文番号<br>xxx-xxxx-xxxx</div>
+        <div>注文番号<br>{{struct.id}}</div>
       </mat-card>
       <mat-card class="my-page-subheader">
-        <div>注文日<br>yyyy年mm月dd日hh時mm分</div>
+        <div>注文日<br>{{struct.created_date}}</div>
       </mat-card>
       <span class="flexible-space"></span>
       <mat-card class="my-page-subheader">
-        <div>合計<br>￥xxx,xxx</div>
+        <div>合計<br>{{struct.totalFee}} 円</div>
       </mat-card>
     </mat-card>
-    <app-list-item *ngFor="let struct of structs" class="item">
+    <app-list-item *ngFor="let product of struct.products" class="item">
       <div class="item-content">
-        <a class="img-wrapper" routerLink="/products/{{struct.product.id}}">
-          <img src="{{struct.product.image_url}}">
+        <a class="img-wrapper" routerLink="/products/{{product.id}}">
+          <img src="{{product.image_url}}">
         </a>
         <div class="product-info">
-          <a routerLink="/products/{{struct.product.id}}"><mat-card-title>{{struct.product.name}}</mat-card-title></a>
-          <mat-card-subtitle>{{struct.product.overview}}</mat-card-subtitle>
+          <a routerLink="/products/{{product.id}}"><mat-card-title>{{product.name}}</mat-card-title></a>
+          <mat-card-subtitle>{{product.overview}}</mat-card-subtitle>
         </div>
         <div>
           <div class="price">
-            <div><span>単価</span><span>{{struct.product.price}} 円</span></div>
+            <div><span>単価</span><span>{{product.price}} 円</span></div>
             <div></div>
-            <div><span>合計金額</span><span>{{struct.product.price * struct.count}} 円</span></div>
+            <div><span>合計金額</span><span>{{product.price * product.count}} 円</span></div>
           </div>
         </div>
       </div>
     </app-list-item>
   </app-list>
 </section>
-<!--
-    <app-list-item class="item">
+    <!-- <app-list-item class="item">
       <div class="item-content">
         <a class="img-wrapper" routerLink="/products/{{struct.product.id}}">
           <img src="/assets/group-2.jpg">
@@ -44,7 +43,6 @@
         <mat-card-subtitle>{{struct.product.overview}}</mat-card-subtitle>
       </div>
     </app-list-item>
-    ---------------------------------------------
     <app-list-item class="item">
         <div class="item-content">
           <a class="img-wrapper" routerLink="/products/{{struct.product.id}}">
@@ -62,5 +60,4 @@
           </div>
         </div>
     </app-list-item>
-    
-  -->
+     -->

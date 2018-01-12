@@ -6,7 +6,7 @@ import { CartService } from '../service/cart.service';
 import { ProductService } from '../service/product.service';
 import { OnDestroy } from '@angular/core/src/metadata/lifecycle_hooks';
 
-export class Struct {
+class Struct {
   count  : number;
   product: Product;
 }
@@ -29,7 +29,7 @@ export class CartComponent implements OnInit, OnDestroy {
   constructor(
     private cartService: CartService,
     private productService: ProductService
-  ) { console.log(this.countList)}
+  ) { }
 
   ngOnInit() {
     this.productService.getProducts()

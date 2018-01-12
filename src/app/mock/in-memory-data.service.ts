@@ -110,15 +110,17 @@ export class InMemoryDataService implements InMemoryDbService {
         token: "test-token"
     };
 
-    const settelement = [
+    const settlements = [
         {
             id          : 1001,
             transitions : [
                 {
+                    count       : 3,
                     product_id  : 1,
                     price       : 1000
                 },
                 {
+                    count       : 1,
                     product_id  : 4,
                     price       : 1000
                 }
@@ -130,10 +132,12 @@ export class InMemoryDataService implements InMemoryDbService {
             id          : 1002,
             transitions : [
                 {
+                    count       : 2,
                     product_id  : 3,
                     price       : 2000
                 },
                 {
+                    count       : 1,
                     product_id  : 5,
                     price       : 3200
                 }
@@ -145,10 +149,12 @@ export class InMemoryDataService implements InMemoryDbService {
             id          : 1003,
             transitions : [
                 {
+                    count       : 4,
                     product_id  : 3,
                     price       : 2000
                 },
                 {
+                    count       : 2,
                     product_id  : 8,
                     price       : 500
                 }
@@ -158,6 +164,6 @@ export class InMemoryDataService implements InMemoryDbService {
         }
     ];
     
-    return {products, auth, settelement};
+    return {products, auth, settlements};
   }
 }

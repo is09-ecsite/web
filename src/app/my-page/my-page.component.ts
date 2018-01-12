@@ -1,43 +1,66 @@
 import { Component, OnInit } from '@angular/core';
 
+import { Product } from '../struct/product';
 import { Settlement } from '../struct/settlement';
 import { Transition } from '../struct/transition';
+
+import { ProductService } from "../service/product.service";
+import { SettlementService } from "../service/settlement.service";
+import { resolve } from 'dns';
 
 @Component({
   selector: 'app-my-page',
   templateUrl: './my-page.component.html',
   styleUrls: ['./my-page.component.css']
 })
-
 export class MyPageComponent implements OnInit {
 
-  //let settlements : Settlement[Transition[]]
-  settelements:Settlement[] = [Array(10)].map((x, i) => {
-    let s = new Settlement()
-    s.id = i;
-    
-    s.transiton = [1, 2].map(y => {
-      let t = new Transition()
-      t.product_id = y;
-      t.price = y * 1000;
-      return t;
-    })
+  private products   : Product[]
+  private settlements: Settlement[];
+  private structs    = [];
 
-    return s
-  })
-
-
-  constructor() {
-  }
+  constructor(
+    private productService   : ProductService,
+    private settlementService: SettlementService
+  ) {  }
 
   ngOnInit(): void {
-  }
+    (async _ => {
+      await new Promise(resolve => 
+        this.settlementService.getSettlements()
+          .subscribe(settlements => {
+            this.settlements = settlements
+            resolve(settlements)
+          })
+      )
 
-  struct = {
-    product: {
-      id: null,
-      image_url: null
-    }
+      await new Promise(resolve => 
+        this.productService.getProducts()
+          .subscribe(products => {
+            this.products = products
+            resolve(products)
+          })
+      )
+
+      this.structs = this.settlements.map(settlement => {
+        let products = settlement.transitions.map(transition => {
+          let product = Object.assign(this.products.find(x => x.id == transition.product_id));
+          product.price = transition.price;
+          product.count = transition.count;
+          return product;
+        })
+
+        let struct = Object.assign(settlement);
+        struct.totalFee = settlement.transitions
+          .map(x => x.price)
+          .reduce((prev, next) => prev + next, 0)
+
+        struct.products = products;
+
+        return struct;
+      })
+
+    })()
   }
 
 }

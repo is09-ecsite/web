@@ -96,6 +96,10 @@ app-list-item+app-list-item {
     text-align    : right;
 }
 
+.price > div {
+    width: 100%;
+}
+
 .price > div > :first-child {
     float : left;
     margin: 0 1rem;
