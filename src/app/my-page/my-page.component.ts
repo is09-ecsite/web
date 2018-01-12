@@ -6,7 +6,6 @@ import { Transition } from '../struct/transition';
 
 import { ProductService } from "../service/product.service";
 import { SettlementService } from "../service/settlement.service";
-import { resolve } from 'dns';
 
 @Component({
   selector: 'app-my-page',
