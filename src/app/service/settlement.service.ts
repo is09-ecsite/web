@@ -1,56 +1,125 @@
 import { Injectable } from '@angular/core';
-import {CartService} from './cart.service';
-import {ProductService} from './product.service';
-import {Cart} from '../struct/cart';
-import {Product} from '../struct/product';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+
+import { Observable } from 'rxjs/Observable';
+import { of } from 'rxjs/observable/of';
+import { catchError, map, tap } from 'rxjs/operators';
+
+import { CartService } from '../service/cart.service';
+
+import { Settlement } from './../struct/settlement';
+import { Cart } from './../struct/cart';
+import { URL } from './URL';
+
+
+const httpOptions = {
+  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+};
 
 @Injectable()
 export class SettlementService {
 
-  products: Product[] = [];
-  carts: Cart[] = [];
-
   constructor(
-    private productService: ProductService,
-    private cartService: CartService
-  ) {
-    cartService.subscribe((item) => {
-      this.carts = item;
-    });
+    private http: HttpClient,
+    private cart: CartService,
+  ) { }
 
-    productService.getProducts().subscribe((item) => { this.products = item;});
+  /** GET settlements from the server */
+  getSettlements (): Observable<Settlement[]> {
+    return this.http.get<Settlement[]>(URL.v1.settlements)
+      .pipe(
+        tap(settlements => this.log(`fetched settlements`)),
+        catchError(this.handleError('getSettlements', []))
+      );
   }
 
-  private subscribers = [];
-
-  subscribe(product, cart): string {
-    let id = Math.random().toString(36).slice(-10);
-    this.subscribers = this.subscribers.concat({product, id});
-    this.subscribers = this.subscribers.concat({cart, id});
-    product(this.getProductList());
-    cart(this.getCartList());
-    return id;
+  /** GET settlement by id. Return `undefined` when id not found */
+  getSettlementNo404<Data>(id: number): Observable<Settlement> {
+    const url = `${URL.v1.settlements}/?id=${id}`;
+    return this.http.get<Settlement[]>(url)
+      .pipe(
+        map(settlements => settlements[0]), // returns a {0|1} element array
+        tap(h => {
+          const outcome = h ? `fetched` : `did not find`;
+          this.log(`${outcome} settlement id=${id}`);
+        }),
+        catchError(this.handleError<Settlement>(`getSettlement id=${id}`))
+      );
   }
 
-
-  unsubscribe(id: string) {
-    this.subscribers = this.subscribers.filter(s => s.id != id);
+  /** GET settlement by id. Will 404 if id not found */
+  getSettlement(id: number): Observable<Settlement> {
+    const url = `${URL.v1.settlements}/${id}`;
+    return this.http.get<Settlement>(url).pipe(
+      tap(_ => this.log(`fetched settlement id=${id}`)),
+      catchError(this.handleError<Settlement>(`getSettlement id=${id}`))
+    );
   }
 
-  getCartService(): CartService {
-    return this.cartService;
+  /* GET settlements whose name contains search term */
+  searchSettlements(term: string): Observable<Settlement[]> {
+    if (!term.trim()) {
+      // if not search term, return empty settlement array.
+      return of([]);
+    }
+    return this.http.get<Settlement[]>(`api/settlements/?name=${term}`).pipe(
+      tap(_ => this.log(`found settlements matching "${term}"`)),
+      catchError(this.handleError<Settlement[]>('searchSettlements', []))
+    );
   }
 
-  getProductService(): ProductService {
-    return this.productService;
+  //////// Save methods //////////
+
+  /** POST: add a new settlement to the server */
+  addSettlement (settlement: Settlement): Observable<Settlement> {
+    return this.http.post<Settlement>(URL.v1.settlements, settlement, httpOptions).pipe(
+      tap((settlement: Settlement) => this.log(`added settlement w/ id=${settlement.id}`)),
+      catchError(this.handleError<Settlement>('addSettlement'))
+    );
   }
 
-  getCartList(): Cart[] {
-    return this.carts;
+  /** DELETE: delete the settlement from the server */
+  deleteSettlement (settlement: Settlement | number): Observable<Settlement> {
+    const id = typeof settlement === 'number' ? settlement : settlement.id;
+    const url = `${URL.v1.settlements}/${id}`;
+
+    return this.http.delete<Settlement>(url, httpOptions).pipe(
+      tap(_ => this.log(`deleted settlement id=${id}`)),
+      catchError(this.handleError<Settlement>('deleteSettlement'))
+    );
   }
 
-  getProductList(): Product[] {
-    return this.products;
+  /** PUT: update the settlement on the server */
+  updateSettlement (settlement: Settlement): Observable<any> {
+    return this.http.put(URL.v1.settlements, settlement, httpOptions).pipe(
+      tap(_ => this.log(`updated settlement id=${settlement.id}`)),
+      catchError(this.handleError<any>('updateSettlement'))
+    );
+  }
+
+  /**
+   * Handle Http operation that failed.
+   * Let the app continue.
+   * @param operation - name of the operation that failed
+   * @param result - optional value to return as the observable result
+   */
+  private handleError<T> (operation = 'operation', result?: T) {
+    return (error: any): Observable<T> => {
+
+      // TODO: send the error to remote logging infrastructure
+      console.error(error); // log to console instead
+
+      // TODO: better job of transform¥ing error for user consumption
+      this.log(`${operation} failed: ${error.message}`);
+
+      // Let the app keep running by returning an empty result.
+      return of(result as T);
+    };
+  }
+
+  /** Log a SettlementService message with the MessageService */
+  private log(message: string) {
+    console.log('SettlementService: ' + message);
   }
 
 }

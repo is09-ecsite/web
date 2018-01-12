@@ -111,11 +111,53 @@ export class InMemoryDataService implements InMemoryDbService {
     };
 
     const settelement = [
-
+        {
+            id          : 1001,
+            transitions : [
+                {
+                    product_id  : 1,
+                    price       : 1000
+                },
+                {
+                    product_id  : 4,
+                    price       : 1000
+                }
+            ],
+            created_date: 'Thu Dec 05 2017 21:27:49 GMT+0900 (JST)',
+            updated_date: 'Thu Dec 05 2017 21:27:49 GMT+0900 (JST)'
+        },
+        {
+            id          : 1002,
+            transitions : [
+                {
+                    product_id  : 3,
+                    price       : 2000
+                },
+                {
+                    product_id  : 5,
+                    price       : 3200
+                }
+            ],
+            created_date: 'Thu Dec 05 2017 21:27:49 GMT+0900 (JST)',
+            updated_date: 'Thu Dec 05 2017 21:27:49 GMT+0900 (JST)'
+        },
+        {
+            id          : 1003,
+            transitions : [
+                {
+                    product_id  : 3,
+                    price       : 2000
+                },
+                {
+                    product_id  : 8,
+                    price       : 500
+                }
+            ],
+            created_date: 'Thu Dec 05 2017 21:27:49 GMT+0900 (JST)',
+            updated_date: 'Thu Dec 05 2017 21:27:49 GMT+0900 (JST)'
+        }
     ];
-
     
-    
-    return {products, auth};
+    return {products, auth, settelement};
   }
 }
