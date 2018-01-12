@@ -2,7 +2,7 @@ import { Transition } from './transition';
 
 export class Settlement {
     id          : number;
-    transiton   : Transition[];
+    transitions : Transition[];
     created_date: number;
     updated_date: number;
 }
