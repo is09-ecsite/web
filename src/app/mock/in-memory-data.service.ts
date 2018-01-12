@@ -55,8 +55,8 @@ export class InMemoryDataService implements InMemoryDbService {
         },
         {
             id          : 6,
-            image_url   : 'http://placehold.jp/500x300.png?text=6',
-            site_url    : 'http://blackrockdigital.github.io/startbootstrap-creative/',
+            image_url   : '/assets/group-6.jpg',
+            site_url    : '/assets/page/6/page.html',
             name        : 'オーダーメイドジャージ',
             price       : 3000,
             overview    : '着心地重視の完全オーダーメイドのジャージです。ちょっとした外出や部屋着、運動用にもぜひご活用ください！',

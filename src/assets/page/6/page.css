@@ -1,0 +1,47 @@
+body{
+
+}
+
+h1{
+  text-align: left;
+  padding-left: 3cm;
+  padding-top: 1cm;
+  float:left;
+}
+
+#cart{
+  width: 2cm;
+  height: 2cm;
+  padding-top: 1cm;
+  padding-left: 17cm;
+}
+
+img.product{
+
+  height:150px;
+  width:250px;
+
+}
+
+b{
+  font-size: 1cm;
+  padding-top: 1cm;
+  color:#555;
+}
+
+b#price{
+  color:#B12704;
+  padding-left: 0.5cm;
+}
+
+form{
+
+  text-align: right;
+  padding-right: 2cm;
+  border-radius: 10px;
+
+}
+
+input#button{
+  background: #f0c14b;
+}
