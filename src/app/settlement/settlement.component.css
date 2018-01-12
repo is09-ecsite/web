@@ -1,0 +1,110 @@
+.host {
+    align-items   : center;
+    display       : flex;
+    flex-direction: column;
+    padding       : 2rem 10%;
+}
+
+app-list {
+    background-color: #fafbfd;
+    margin-bottom   : 80px;
+}
+
+img {
+    background-position: center;
+    background-repeat  : no-repeat;
+    background-size    : cover;
+    max-height         : 6.48rem;
+    max-width          : 10.8rem;
+    transition         : all .2s ease-out;
+    margin             : 1.2rem
+}
+
+app-list-item+app-list-item {
+    border-top: solid 1px #ccc;
+}
+
+.item-content {
+    display: flex;
+}
+
+.product-info {
+    display        : flex;
+    flex-direction : column;
+    flex-grow      : 1;
+    justify-content: center;
+}
+
+.price {
+    display        : flex;
+    flex-direction : column;
+    justify-content: center;
+    text-align     : right;
+    white-space    : nowrap;
+}
+
+.price > div {
+    display: flex;
+}
+
+.price > div > :first-child {
+    margin: 0 1rem;
+}
+
+.price > div > :last-child {
+    flex-grow: 1;
+}
+
+.terms {
+    display       : flex;
+    flex-direction: column;
+}
+
+.terms > mat-card-title {
+    text-align: center;
+}
+
+.terms > :last-child {
+    align-items   : flex-end;
+    align-self    : flex-end;
+    display       : flex;
+    flex-direction: column;
+    margin-top    : 2rem;
+}
+
+.terms > :last-child > :last-child {
+    align-items    : center;
+    display        : flex;
+    justify-content: center;
+    margin-top     : 1rem;
+}
+
+.terms > :last-child button {
+    margin-left: 2rem;
+}
+
+.total-price {
+    font-size: 1.2rem;
+    border-bottom: 1px solid #666;
+}
+
+.mat-form-field {
+    width: 80px !important;
+}
+
+.mat-select-value {
+    max-width: 100%;
+    width: auto;
+}  
+
+@media (max-width: 767px) {
+    .cart-management-header > :first-child {
+        display: none;
+    }
+    .item-content {
+        flex-direction:  column;
+    }
+    .item-content > :first-child {
+        display: none;
+    }
+}

@@ -12,10 +12,10 @@ import { Router } from '@angular/router';
 export class SignInComponent implements OnInit {
 
   form = new FormGroup({
-    giftCode1: new FormControl("", Validators.minLength(2)),
-    giftCode2: new FormControl(""),
-    giftCode3: new FormControl("", Validators.minLength(2)),
-    giftCode4: new FormControl("", Validators.minLength(2))
+    giftCode1: new FormControl("", Validators.minLength(4)),
+    giftCode2: new FormControl("", Validators.minLength(4)),
+    giftCode3: new FormControl("", Validators.minLength(4)),
+    giftCode4: new FormControl("", Validators.minLength(4))
   });
 
   constructor(

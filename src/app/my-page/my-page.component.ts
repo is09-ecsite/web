@@ -16,7 +16,7 @@ export class MyPageComponent implements OnInit {
 
   private products   : Product[]
   private settlements: Settlement[];
-  private structs    = [];
+  structs = [];
 
   constructor(
     private productService   : ProductService,
