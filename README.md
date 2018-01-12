@@ -94,8 +94,8 @@ $ git push heroku master
     - price       : 3200
     - overview    : 「持ってても宝の持ち腐れ…」そんな物が押し入れに眠っていませんか？それ、今欲しい物と交換できるかもしれません！
 - 6
-    - image_url   : 
-    - site_url    : 
+    - image_url   : /src/assets/group-6.jpg 
+    - site_url    : /src/assets/page/6/page.html
     - name        : オーダーメイドジャージ
     - price       : 3000
     - overview    : 着心地重視の完全オーダーメイドのジャージです。ちょっとした外出や部屋着、運動用にもぜひご活用ください！
