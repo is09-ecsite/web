@@ -1,16 +1,12 @@
-@charset "utf-8";
+arset "utf-8";
 
-html {
-    background-color: white;
-}
-
-/* 一括で全ての要素の余白をゼロに指定 */
+/* �ꊇ�őS�Ă̗v�f�̗]�����[���Ɏw�� */
 * {
   margin: 200;
   padding: 0;
 }
 
-/* 全体的なリンク */
+/* �S�̓I�ȃ����N */
 
 a:link,
 a:visited,
@@ -26,19 +22,18 @@ a:hover { color: #f00; }
 a:active { color: #f00; }
 
 /* -------------------------------------------------------------
-   [1] レイアウトに関する指定 */
+   [1] ���C�A�E�g�Ɋւ����w�� */
 body {
   font-size: 120%;
   text-align: center;
-  font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+  font-family: "�q���M�m�p�S Pro W3", "Hiragino Kaku Gothic Pro", Osaka, "�l�r �o�S�V�b�N", "MS PGothic", sans-serif;
   padding: 0;
   margin: 0;
   background-color: red;
 }
 
-/*-- 全体を囲んでいます --*/
+/*-- �S�̂��͂��ł��܂� --*/
 #wrapper {
-  text-align: left;
   width: 800px;
   margin: 0 auto;
   background: url(img/bg-wrapper.jpg) repeat-y -50px 0;
@@ -46,23 +41,23 @@ body {
 }
 
 /* -------------------------------------------------------------
-   [2] ヘッダーブロック内に関する指定 */
+   [2] �w�b�_�[�u���b�N���Ɋւ����w�� */
 
-/* 見出し */
+/* ���o�� */
 
 h1 {
   font-size: 270%;
   font-weight: normal;
   text-align: center;
-  position: absolute;
+  position: absolute
   left: 270px;
   color: #39f;
 }
 
 /* -------------------------------------------------------------
-   [3] コンテンツブロック内に関する指定 */
+   [3] �R���e���c�u���b�N���Ɋւ����w�� */
 
-/* 見出し */
+/* ���o�� */
 h2,
 h3,
 h4,
