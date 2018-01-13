@@ -53,7 +53,7 @@ export class MyPageComponent implements OnInit {
 
         let struct = Object.assign(settlement);
         struct.totalFee = settlement.transitions
-          .map(x => x.price)
+          .map(x => x.price * x.count)
           .reduce((prev, next) => prev + next, 0)
 
         struct.products = products;
