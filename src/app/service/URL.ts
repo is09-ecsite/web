@@ -12,7 +12,7 @@ export const URL = {
     // Add origin when a real server is ready to receive requests.
 
     // // product
-    // {
+    // "v1": {
     //     auth       : "https://is09api.acqq.xyz/api/auth",
     //     products   : "https://is09api.acqq.xyz/api/products",
     //     settlements: "https://is09api.acqq.xyz/api/settlements",
