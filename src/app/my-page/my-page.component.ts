@@ -62,8 +62,6 @@ export class MyPageComponent implements OnInit {
 
         return struct;
       })
-      console.log(this.products)
-      console.log(this.structs)
 
     })()
   }
