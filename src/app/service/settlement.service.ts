@@ -21,7 +21,13 @@ export class SettlementService {
 
   /** GET settlements from the server */
   getSettlements (): Observable<Settlement[]> {
-    return this.http.get<Settlement[]>(URL.v1.settlements)
+    return this.http.get<Settlement[]>(
+      URL.v1.settlements,
+      {
+        headers: new HttpHeaders().set( 'Content-Type', 'application/json' )
+                                  .set( 'Authorization', this.authenticationService.getAuthentication().token)
+      }
+    )
       .pipe(
         tap(settlements => this.log(`fetched settlements`)),
         catchError(this.handleError('getSettlements', []))
@@ -31,7 +37,13 @@ export class SettlementService {
   /** GET settlement by id. Return `undefined` when id not found */
   getSettlementNo404<Data>(id: number): Observable<Settlement> {
     const url = `${URL.v1.settlements}/?id=${id}`;
-    return this.http.get<Settlement[]>(url)
+    return this.http.get<Settlement[]>(
+      url,
+      {
+        headers: new HttpHeaders().set( 'Content-Type', 'application/json' )
+                                  .set( 'Authorization', this.authenticationService.getAuthentication().token)
+      }
+    )
       .pipe(
         map(settlements => settlements[0]), // returns a {0|1} element array
         tap(h => {
@@ -45,7 +57,13 @@ export class SettlementService {
   /** GET settlement by id. Will 404 if id not found */
   getSettlement(id: number): Observable<Settlement> {
     const url = `${URL.v1.settlements}/${id}`;
-    return this.http.get<Settlement>(url).pipe(
+    return this.http.get<Settlement>(
+      url,
+      {
+        headers: new HttpHeaders().set( 'Content-Type', 'application/json' )
+                                  .set( 'Authorization', this.authenticationService.getAuthentication().token)
+      }
+    ).pipe(
       tap(_ => this.log(`fetched settlement id=${id}`)),
       catchError(this.handleError<Settlement>(`getSettlement id=${id}`))
     );
@@ -57,7 +75,13 @@ export class SettlementService {
       // if not search term, return empty settlement array.
       return of([]);
     }
-    return this.http.get<Settlement[]>(`api/settlements/?name=${term}`).pipe(
+    return this.http.get<Settlement[]>(
+      `api/settlements/?name=${term}`,
+      {
+        headers: new HttpHeaders().set( 'Content-Type', 'application/json' )
+                                  .set( 'Authorization', this.authenticationService.getAuthentication().token)
+      }
+    ).pipe(
       tap(_ => this.log(`found settlements matching "${term}"`)),
       catchError(this.handleError<Settlement[]>('searchSettlements', []))
     );

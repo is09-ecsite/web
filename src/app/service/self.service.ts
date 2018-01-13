@@ -21,7 +21,13 @@ export class SelfService {
 
   /** GET self by id. Will 404 if id not found */
   getSelf(): Observable<Self> {
-    return this.http.get<Self>(URL.v1.self).pipe(
+    return this.http.get<Self>(
+      URL.v1.self,
+      {
+        headers: new HttpHeaders().set( 'Content-Type', 'application/json' )
+                                  .set( 'Authorization', this.authenticationService.getAuthentication().token)
+      }
+    ).pipe(
       tap(_ => this.log(`fetched self`)),
       catchError(this.handleError<Self>(`getSelf`))
     );
