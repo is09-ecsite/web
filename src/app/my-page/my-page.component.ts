@@ -45,7 +45,7 @@ export class MyPageComponent implements OnInit {
 
       this.structs = this.settlements.map(settlement => {
 
-        let struct = Object.assign({totalFee: 0}, settlement);
+        let struct = Object.assign({totalFee: 0, products: []}, settlement);
 
         struct.totalFee = settlement.transitions
           .map(x => x.price * x.count)
