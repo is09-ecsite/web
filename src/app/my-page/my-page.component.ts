@@ -44,22 +44,26 @@ export class MyPageComponent implements OnInit {
       )
 
       this.structs = this.settlements.map(settlement => {
+
+        let struct = Object.assign({totalFee: 0}, settlement);
+
+        struct.totalFee = settlement.transitions
+          .map(x => x.price * x.count)
+          .reduce((prev, next) => prev + next, 0)
+
         let products = settlement.transitions.map(transition => {
-          let product = Object.assign(this.products.find(x => x.id == transition.product_id));
+          let product = Object.assign({count: 0}, this.products.find(x => x.id == transition.product_id));
           product.price = transition.price;
           product.count = transition.count;
           return product;
         })
 
-        let struct = Object.assign(settlement);
-        struct.totalFee = settlement.transitions
-          .map(x => x.price * x.count)
-          .reduce((prev, next) => prev + next, 0)
-
         struct.products = products;
 
         return struct;
       })
+      console.log(this.products)
+      console.log(this.structs)
 
     })()
   }
