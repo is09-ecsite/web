@@ -163,7 +163,12 @@ export class InMemoryDataService implements InMemoryDbService {
             updated_date: 'Thu Dec 05 2017 21:27:49 GMT+0900 (JST)'
         }
     ];
+
+    const self = {
+        expiration_date: "Sat Jan 13 2018 19:33:32 GMT+0900 (JST)",
+        amount         : 5000
+     };
     
-    return {products, auth, settlements};
+    return {products, auth, settlements, self};
   }
 }

@@ -33,6 +33,7 @@ import { ListComponent } from './list/list.component';
 import { ListItemComponent } from './list-item/list-item.component';
 import { AuthenticationService } from './service/authentication.service';
 import { SettlementService } from './service/settlement.service';
+import { SelfService } from './service/self.service';
 
 @NgModule({
   imports: [
@@ -70,7 +71,7 @@ import { SettlementService } from './service/settlement.service';
     ListComponent,
     ListItemComponent
   ],
-  providers: [ProductService, CartService, AuthenticationService, SettlementService],
+  providers: [ProductService, CartService, AuthenticationService, SettlementService, SelfService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

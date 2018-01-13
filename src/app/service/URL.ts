@@ -1,10 +1,11 @@
 export const URL = {
     // // dubug
     "v1": {
-        auth : "api/auth",
-        products: "api/products",
+        auth       : "api/auth",
+        products   : "api/products",
         settlements: "api/settlements",
-        transition: "api/settlements/"
+        self       : "api/self",
+        transition : "api/settlements/"
     }
 
     // TODO Product Migration

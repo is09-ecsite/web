@@ -2,10 +2,12 @@ import { Component, OnInit } from '@angular/core';
 
 import { Product } from '../struct/product';
 import { Settlement } from '../struct/settlement';
+import { Self } from '../struct/self';
 import { Transition } from '../struct/transition';
 
 import { AuthenticationService } from '../service/authentication.service';
 import { ProductService } from "../service/product.service";
+import { SelfService } from "../service/self.service";
 import { SettlementService } from "../service/settlement.service";
 
 @Component({
@@ -17,11 +19,13 @@ export class MyPageComponent implements OnInit {
 
   private products   : Product[]
   private settlements: Settlement[];
-  structs = [];
+  self   : Self = new Self();
+  structs       = [];
 
   constructor(
     private authenticationService : AuthenticationService,
     private productService        : ProductService,
+    private selfService           : SelfService,
     private settlementService     : SettlementService
   ) {  }
 
@@ -62,6 +66,15 @@ export class MyPageComponent implements OnInit {
 
         return struct;
       })
+
+
+      await new Promise(resolve => 
+        this.selfService.getSelf()
+          .subscribe(self => {
+            this.self = self;
+            resolve(self)
+          })
+      )
 
     })()
   }
