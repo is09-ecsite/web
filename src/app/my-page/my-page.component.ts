@@ -19,8 +19,9 @@ export class MyPageComponent implements OnInit {
 
   private products   : Product[]
   private settlements: Settlement[];
-  self   : Self = new Self();
-  structs       = [];
+  balance: number = 0;
+  self   : Self   = new Self();
+  structs         = [];
 
   constructor(
     private authenticationService : AuthenticationService,
@@ -72,7 +73,12 @@ export class MyPageComponent implements OnInit {
         this.selfService.getSelf()
           .subscribe(self => {
             this.self = self;
-            resolve(self)
+            this.balance = self.amount - (
+              this.structs
+                .map(x => x.totalFee)
+                .reduce((prev, next) => prev + next)
+            )
+            resolve(self);
           })
       )
 
