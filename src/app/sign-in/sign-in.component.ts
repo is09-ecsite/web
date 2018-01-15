@@ -27,6 +27,8 @@ export class SignInComponent implements OnInit {
   }
 
   onSubmit(event) {
+    event.preventDefault();
+
     let giftCode1 = event.target.elements["giftCode1"].value;
     let giftCode2 = event.target.elements["giftCode2"].value;
     let giftCode3 = event.target.elements["giftCode3"].value;
