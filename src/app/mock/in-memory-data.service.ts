@@ -15,10 +15,10 @@ export class InMemoryDataService implements InMemoryDbService {
         },
         {
             id          : 2,
-            image_url   : '/assets/group-2.jpg',
+            image_url   : '/assets/group-2.gif',
             site_url    : '/assets/page/2/index.html',
             name        : 'Comeal',
-            price       : 2000,
+            price       : 1000,
             overview    : '[学校を使いこなすコミュニケーションツール]\n学食の内容や、食事の感想を言い合うアプリが満を持して登場',
             created_date: 'Thu Dec 02 2017 21:27:49 GMT+0900 (JST)',
             updated_date: 'Thu Dec 02 2017 21:27:49 GMT+0900 (JST)'
@@ -128,40 +128,40 @@ export class InMemoryDataService implements InMemoryDbService {
             created_date: 'Thu Dec 05 2017 21:27:49 GMT+0900 (JST)',
             updated_date: 'Thu Dec 05 2017 21:27:49 GMT+0900 (JST)'
         },
-        {
-            id          : 1002,
-            transitions : [
-                {
-                    count       : 2,
-                    product_id  : 3,
-                    price       : 2000
-                },
-                {
-                    count       : 1,
-                    product_id  : 5,
-                    price       : 3200
-                }
-            ],
-            created_date: 'Thu Dec 05 2017 21:27:49 GMT+0900 (JST)',
-            updated_date: 'Thu Dec 05 2017 21:27:49 GMT+0900 (JST)'
-        },
-        {
-            id          : 1003,
-            transitions : [
-                {
-                    count       : 4,
-                    product_id  : 3,
-                    price       : 2000
-                },
-                {
-                    count       : 2,
-                    product_id  : 8,
-                    price       : 500
-                }
-            ],
-            created_date: 'Thu Dec 05 2017 21:27:49 GMT+0900 (JST)',
-            updated_date: 'Thu Dec 05 2017 21:27:49 GMT+0900 (JST)'
-        }
+        // {
+        //     id          : 1002,
+        //     transitions : [
+        //         {
+        //             count       : 2,
+        //             product_id  : 3,
+        //             price       : 2000
+        //         },
+        //         {
+        //             count       : 1,
+        //             product_id  : 5,
+        //             price       : 3200
+        //         }
+        //     ],
+        //     created_date: 'Thu Dec 05 2017 21:27:49 GMT+0900 (JST)',
+        //     updated_date: 'Thu Dec 05 2017 21:27:49 GMT+0900 (JST)'
+        // },
+        // {
+        //     id          : 1003,
+        //     transitions : [
+        //         {
+        //             count       : 4,
+        //             product_id  : 3,
+        //             price       : 2000
+        //         },
+        //         {
+        //             count       : 2,
+        //             product_id  : 8,
+        //             price       : 500
+        //         }
+        //     ],
+        //     created_date: 'Thu Dec 05 2017 21:27:49 GMT+0900 (JST)',
+        //     updated_date: 'Thu Dec 05 2017 21:27:49 GMT+0900 (JST)'
+        // }
     ];
 
     const self = {

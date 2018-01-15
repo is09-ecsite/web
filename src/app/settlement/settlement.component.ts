@@ -8,8 +8,12 @@ import { AuthenticationService } from '../service/authentication.service';
 import { ProductService } from '../service/product.service';
 import { SettlementService } from "../service/settlement.service";
 
+import { Self } from '../struct/self';
 import { Settlement } from '../struct/settlement';
 import { Transition } from '../struct/transition';
+import { SelfService } from '../service/self.service';
+
+import getBalanse from '../common/getBalance';
 
 class Struct {
   count  : number;
@@ -23,17 +27,20 @@ class Struct {
 })
 export class SettlementComponent implements OnInit {
 
-  products     : Product[] = [];
-  cart         : Cart[]    = [];
-  termsChecked : boolean   = false;
-  structs      : Struct[]  = [];
-  subscribeId  : string    = "";
+  products       : Product[]    = [];
+  cart           : Cart[]       = [];
+  termsChecked   : boolean      = false;
+  prevSettlements: Settlement[] = [];
+  self           : Self;
+  structs        : Struct[]     = [];
+  subscribeId    : string       = "";
   
   constructor(
     private authenticationService: AuthenticationService,
     private cartService          : CartService,
     private productService       : ProductService,
     private router               : Router,
+    private selfService          : SelfService,
     private settlementService    : SettlementService
   ) {  }
 
@@ -52,6 +59,9 @@ export class SettlementComponent implements OnInit {
           this.structs = this.toStructs(products, carts);
         });
       });
+
+      this.selfService.getSelf().subscribe(self => this.self = self);
+      this.settlementService.getSettlements().subscribe(settlements => this.prevSettlements = settlements);
   }
 
   ngOnDestroy() {
@@ -86,12 +96,19 @@ export class SettlementComponent implements OnInit {
   onBuyButtonClick() : void {
     let settlement = new Settlement();
     
+    let priceSum = 0;
     settlement.transitions = this.structs.map(struct => {
       let transition = new Transition();
       transition.product_id = struct.product.id;
       transition.count      = struct.count;
+      priceSum += struct.product.price * struct.count;
       return transition;
     })
+
+    if (getBalanse(this.self, this.prevSettlements) - priceSum < 0 ) {
+      alert('残高が不足しています。');
+      return;
+    }
 
     this.settlementService.addSettlement(settlement).subscribe(_ => {
       this.cartService.setCarts([]);
