@@ -33,6 +33,7 @@ export class AuthenticationService {
     // TODO Product Migration
     // remove following debug code and delete comment out production code when a real server is ready to receive requests.
     // debug
+
     // return this.http.get<Authentication>(URL.v1.auth).pipe(
     //   tap(authentication => {
     //     this.authentication = authentication;
@@ -45,6 +46,7 @@ export class AuthenticationService {
     // );
 
     // product
+
     return this.http.post<Authentication>(URL.v1.auth, {gift_code: giftCode}).pipe(
       tap(authentication => {
         this.authentication = authentication;

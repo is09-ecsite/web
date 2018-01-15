@@ -1,9 +1,10 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<mat-toolbar>
+<header class="{{headerClass}}">
   <div>
     <a routerLink="/">IS09 EC-SITE</a>
   </div>
   <span class="spacer"></span>
+  <span class="cartAddMessage" *ngIf="cartAddMessage">{{cartAddMessage}}</span>
   <button 
     mat-button
     routerLink="/cart" 
@@ -22,14 +23,14 @@
     </button>
   </ng-template>
   <ng-template #elseBlock>
-    <button  
+    <button
       mat-button
       routerLink="/sign-in" 
     >
       sign-in
     </button>
   </ng-template>
-</mat-toolbar>
+</header>
 <div class="content">
   <router-outlet></router-outlet>
 </div>

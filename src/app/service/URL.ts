@@ -1,5 +1,5 @@
 export const URL = {
-    // // dubug
+    // dubug
     // "v1": {
     //     auth       : "api/auth",
     //     products   : "api/products",
@@ -11,7 +11,7 @@ export const URL = {
     // TODO Product Migration
     // Add origin when a real server is ready to receive requests.
 
-    // // product
+    // product
     "v1": {
         auth       : "https://is09api.acqq.xyz/api/auth",
         products   : "https://is09api.acqq.xyz/api/products",

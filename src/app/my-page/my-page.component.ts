@@ -52,16 +52,24 @@ export class MyPageComponent implements OnInit {
 
         let struct = Object.assign({totalFee: 0, products: []}, settlement);
 
-        struct.totalFee = settlement.transitions
-          .map(x => x.price * x.count)
-          .reduce((prev, next) => prev + next, 0)
+        struct.totalFee = (
+          settlement.transitions 
+        ? settlement.transitions
+            .map(x => x.price * x.count)
+            .reduce((prev, next) => prev + next, 0)
+        : 0
+        )
 
-        let products = settlement.transitions.map(transition => {
-          let product = Object.assign({count: 0}, this.products.find(x => x.id == transition.product_id));
-          product.price = transition.price;
-          product.count = transition.count;
-          return product;
-        })
+        let products = (
+          settlement.transitions 
+        ? settlement.transitions.map(transition => {
+            let product = Object.assign({count: 0}, this.products.find(x => x.id == transition.product_id));
+            product.price = transition.price;
+            product.count = transition.count;
+            return product;
+          })
+        : []
+        )
 
         struct.products = products;
 
@@ -76,7 +84,7 @@ export class MyPageComponent implements OnInit {
             this.balance = self.amount - (
               this.structs
                 .map(x => x.totalFee)
-                .reduce((prev, next) => prev + next)
+                .reduce((prev, next) => prev + next, 0)
             )
             resolve(self);
           })

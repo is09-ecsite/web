@@ -4,6 +4,7 @@ import { Cart } from '../struct/cart';
 import { Product } from '../struct/product';
 
 import { CartService } from '../service/cart.service';
+import { AuthenticationService } from '../service/authentication.service';
 import { ProductService } from '../service/product.service';
 import { SettlementService } from "../service/settlement.service";
 
@@ -23,26 +24,33 @@ class Struct {
 export class SettlementComponent implements OnInit {
 
   products     : Product[] = [];
-  cart         : Cart[] = [];
-  termsChecked : boolean = false;
-  structs      : Struct[] = [];
-  subscribeId  : string;
+  cart         : Cart[]    = [];
+  termsChecked : boolean   = false;
+  structs      : Struct[]  = [];
+  subscribeId  : string    = "";
   
   constructor(
-    private cartService: CartService,
-    private productService: ProductService,
-    private router: Router,
-    private settlementService: SettlementService
+    private authenticationService: AuthenticationService,
+    private cartService          : CartService,
+    private productService       : ProductService,
+    private router               : Router,
+    private settlementService    : SettlementService
   ) {  }
 
   ngOnInit() {
+
+    if (!this.authenticationService.getAuthentication())
+      this.router.navigate(["/sign-in"]);
+
     this.productService.getProducts()
       .subscribe(products => {
         this.products = products;
 
-        this.subscribeId = this.cartService.subscribe(carts =>
-          this.structs = this.toStructs(products, carts)
-        );
+        this.subscribeId = this.cartService.subscribe(carts => {
+          if(carts.length === 0)
+            this.router.navigate(["/cart"])
+          this.structs = this.toStructs(products, carts);
+        });
       });
   }
 

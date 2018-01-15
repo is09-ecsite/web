@@ -20,10 +20,11 @@ export class CartComponent implements OnInit, OnDestroy {
 
   // countList    = [...Array(10)].map((x,i) => ({value: i+1}));
   // js は難しい
-  countList    = [{value: 1},{value: 2},{value: 3},{value: 4},{value: 5},{value: 6},{value: 7},{value: 8},{value: 9},{value: 10}]
+  countList                = [{value: 1},{value: 2},{value: 3},{value: 4},{value: 5},{value: 6},{value: 7},{value: 8},{value: 9},{value: 10}]
   products     : Product[] = [];
-  protectedCart: Cart[] = [];
-  structs      : Struct[] = [];
+  protectedCart: Cart[]    = [];
+  structs      : Struct[]  = [];
+  structIsNone : Boolean   = false;
   subscribeId  : string;
 
   constructor(
@@ -36,9 +37,11 @@ export class CartComponent implements OnInit, OnDestroy {
       .subscribe(products => {
         this.products = products;
 
-        this.subscribeId = this.cartService.subscribe(carts =>
+        this.subscribeId = this.cartService.subscribe(carts => {
+          if(carts.length === 0) 
+            this.structIsNone = true;
           this.structs = this.toStructs(products, carts)
-        );
+        });
       });
   }
 
