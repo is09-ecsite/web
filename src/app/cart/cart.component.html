@@ -7,7 +7,7 @@
       <button mat-button (click)="clearCart()">
         空にする
       </button>
-      <button mat-button routerLink="/settlement">
+      <button mat-button routerLink="/settlement" disabled="{{structIsNone}}">
         レジに進む
       </button>
     </mat-card>
