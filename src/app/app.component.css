@@ -1,3 +1,6 @@
+body {
+    overflow: hidden;
+}
 
 a {
     font-family: cursive;
@@ -13,8 +16,11 @@ a {
 }
 
 .content {
-    height : calc(100vh - 64px);
-    z-index: 0;
+    height     : calc(100vh - 64px);
+    max-height : calc(100vh - 64px);
+    overflow   : auto;
+    top        : 64px;
+    z-index    : 0;
 }
 
 header {

@@ -35,11 +35,19 @@ export class SignInComponent implements OnInit {
     let giftCode4 = event.target.elements["giftCode4"].value;
 
     const giftCode = giftCode1 + giftCode2 + giftCode3 + giftCode4;
+  
+    if (giftCode.length < 16) {
+      alert("適切なgiftcodeを入力してください");
+      return;
+    }
+
     console.log(giftCode, 'gift code');
     
     this.authenticationService.createAuthentication(giftCode)
-      .subscribe(Authentication => {
-        this.router.navigate(["/"]);
+      .subscribe(authentication => {
+        if(authentication)
+          this.router.navigate(["/"]);
+        else
+          alert("ログイン失敗");
       });
-  }
 }
