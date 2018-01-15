@@ -25,7 +25,7 @@ export class SelfService {
       URL.v1.self,
       {
         headers: new HttpHeaders().set( 'Content-Type', 'application/json' )
-                                  .set( 'Authorization', 'Bearer ' + 'this.authenticationService.getAuthentication().token')
+                                  .set( 'Authorization', 'Bearer ' + this.authenticationService.getAuthentication().token)
       }
     ).pipe(
       tap(_ => this.log(`fetched self`)),
