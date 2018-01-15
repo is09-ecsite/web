@@ -50,4 +50,5 @@ export class SignInComponent implements OnInit {
         else
           alert("ログイン失敗");
       });
+    }
 }
