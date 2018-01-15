@@ -45,7 +45,7 @@ export class AppComponent implements OnInit {
     this.cartService.subscribe(c => {
       if(this.isInitial) {
         this.isInitial = false;
-      } else if (this.router.url != "/cart"){
+      } else if (this.router.url.indexOf("/products") === 0) {
         this.cartAddMessage = "カートに商品が追加されました！"
         setTimeout(
           () => {

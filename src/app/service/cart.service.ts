@@ -62,11 +62,13 @@ export class CartService {
       false
     );
   }
+
   /** GET products from the localstorage */
   getCarts (): Cart[] {
     return JSON.parse(localStorage.getItem("cart")) as Cart[] || [];
   }
 
+  /** SET products to the localstorage */
   setCarts (carts: Cart[]): Cart[] {
     localStorage.setItem("cart", JSON.stringify(carts))
     for (let subscribe of this.subscribers)
