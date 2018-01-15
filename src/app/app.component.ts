@@ -13,6 +13,7 @@ import { CartService } from './service/cart.service';
 export class AppComponent implements OnInit {
   authentication: boolean = false;
   authenticationServiceSubscribeId: string;
+  headerClass: string = "top";
 
   constructor(
     private authenticationService: AuthenticationService,
@@ -26,6 +27,17 @@ export class AppComponent implements OnInit {
         this.authentication = authentication;
       })
     )
+    let checkHeaderPosition = () => {
+      if (window.pageYOffset > 64 && this.headerClass == "top")
+        this.headerClass = "middle"
+      else if (window.pageYOffset < 30 && this.headerClass == "middle") 
+        this.headerClass = "top"
+      
+      setTimeout(checkHeaderPosition, 10)
+    }
+
+    checkHeaderPosition()
+    
   }
 
 }
