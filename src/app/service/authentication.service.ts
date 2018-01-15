@@ -48,7 +48,7 @@ export class AuthenticationService {
     // return this.http.post<Authentication>(URL.v1.auth, {gift_code: giftCode}).pipe(
     //   tap(authentication => {
     //     this.authentication = authentication;
-    //     localStorage.setItem("token", authentication.token);
+    //     localStorage.setItem("token", "Bearer " + authentication.token);
     //     for (let subscribe of this.subscribers)
     //       subscribe.listener(authentication);
     //     this.log(`fetched authentication`);

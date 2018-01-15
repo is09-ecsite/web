@@ -25,7 +25,7 @@ export class SettlementService {
       URL.v1.settlements,
       {
         headers: new HttpHeaders().set( 'Content-Type', 'application/json' )
-                                  .set( 'Authorization', this.authenticationService.getAuthentication().token)
+                                  .set( 'Authorization', 'Bearer ' + this.authenticationService.getAuthentication().token)
       }
     )
       .pipe(
@@ -41,7 +41,7 @@ export class SettlementService {
       url,
       {
         headers: new HttpHeaders().set( 'Content-Type', 'application/json' )
-                                  .set( 'Authorization', this.authenticationService.getAuthentication().token)
+                                  .set( 'Authorization', 'Bearer ' + this.authenticationService.getAuthentication().token)
       }
     )
       .pipe(
@@ -61,7 +61,7 @@ export class SettlementService {
       url,
       {
         headers: new HttpHeaders().set( 'Content-Type', 'application/json' )
-                                  .set( 'Authorization', this.authenticationService.getAuthentication().token)
+                                  .set( 'Authorization', 'Bearer ' + this.authenticationService.getAuthentication().token)
       }
     ).pipe(
       tap(_ => this.log(`fetched settlement id=${id}`)),
@@ -79,7 +79,7 @@ export class SettlementService {
       `api/settlements/?name=${term}`,
       {
         headers: new HttpHeaders().set( 'Content-Type', 'application/json' )
-                                  .set( 'Authorization', this.authenticationService.getAuthentication().token)
+                                  .set( 'Authorization', 'Bearer ' + this.authenticationService.getAuthentication().token)
       }
     ).pipe(
       tap(_ => this.log(`found settlements matching "${term}"`)),
@@ -95,7 +95,7 @@ export class SettlementService {
       URL.v1.settlements, settlement, 
       {
         headers: new HttpHeaders().set( 'Content-Type', 'application/json' )
-                                  .set( 'Authorization', this.authenticationService.getAuthentication().token)
+                                  .set( 'Authorization', 'Bearer ' + this.authenticationService.getAuthentication().token)
       }
     ).pipe(
       tap((settlement: Settlement) => this.log(`added settlement w/ id=${settlement.id}`)),
@@ -112,7 +112,7 @@ export class SettlementService {
       url,
       {
         headers: new HttpHeaders().set( 'Content-Type', 'application/json' )
-                                  .set( 'Authorization', this.authenticationService.getAuthentication().token)
+                                  .set( 'Authorization', 'Bearer ' + this.authenticationService.getAuthentication().token)
       }
     ).pipe(
       tap(_ => this.log(`deleted settlement id=${id}`)),
@@ -127,7 +127,7 @@ export class SettlementService {
       settlement,
       {
         headers: new HttpHeaders().set( 'Content-Type', 'application/json' )
-                                  .set( 'Authorization', this.authenticationService.getAuthentication().token)
+                                  .set( 'Authorization', 'Bearer ' + this.authenticationService.getAuthentication().token)
       }
     ).pipe(
       tap(_ => this.log(`updated settlement id=${settlement.id}`)),
