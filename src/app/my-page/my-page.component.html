@@ -1,4 +1,8 @@
 <section class="host">
+  <div class="container">
+    <div>残高　{{balance}} 円</div>
+    <div><div class="item">初期金額</div>{{self.amount}} 円<br><div class="item">有効期限</div>{{self.expiration_date}}</div>
+  </div>
   <app-list *ngFor="let struct of structs">
     <mat-card class="my-page-header">
       <mat-card class="my-page-subheader">
@@ -32,10 +36,12 @@
     </app-list-item>
   </app-list>
   <!-- test code start -->
+  <!--
   <div>
     <span>残高{{balance}}</span><br>
     <span>初期金額{{self.amount}}</span><br>
     <span>有効期限{{self.expiration_date}}</span><br>
   </div>
+  -->
   <!-- test code end -->
 </section>

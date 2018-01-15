@@ -28,6 +28,27 @@
     flex-grow: 1;
 }
 
+.container {
+    align-items            : center;
+    display                : flex;
+    justify-content        : space-around;
+    margin-bottom          : 30px;
+    width                  : 100%;
+}
+
+.container > div:nth-child(1) {
+    font-size  : 2rem;
+}
+.container > div:nth-child(2) {
+    font-size  : 1rem;
+    text-align : right;
+}
+
+.item {
+    font-weight: bold;
+    font-size  : 1.1rem;
+}
+
 app-list {
     background-color: #fafbfd;
     margin-bottom   : 80px;
@@ -62,7 +83,6 @@ app-list-item+app-list-item {
 .item-content {
     display: flex;
 }
-
 
 .item-content > :last-child {
     align-items    : center;
