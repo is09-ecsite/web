@@ -76,7 +76,7 @@ export class MyPageComponent implements OnInit {
             this.balance = self.amount - (
               this.structs
                 .map(x => x.totalFee)
-                .reduce((prev, next) => prev + next)
+                .reduce((prev, next) => prev + next, 0)
             )
             resolve(self);
           })
