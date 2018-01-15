@@ -4,6 +4,7 @@ import { Cart } from '../struct/cart';
 import { Product } from '../struct/product';
 
 import { CartService } from '../service/cart.service';
+import { AuthenticationService } from '../service/authentication.service';
 import { ProductService } from '../service/product.service';
 import { SettlementService } from "../service/settlement.service";
 
@@ -29,6 +30,7 @@ export class SettlementComponent implements OnInit {
   subscribeId  : string;
   
   constructor(
+    private authenticationService: AuthenticationService,
     private cartService: CartService,
     private productService: ProductService,
     private router: Router,
@@ -36,6 +38,10 @@ export class SettlementComponent implements OnInit {
   ) {  }
 
   ngOnInit() {
+
+    if (!this.authenticationService.getAuthentication())
+      this.router.navigate(["/sign-in"]);
+
     this.productService.getProducts()
       .subscribe(products => {
         this.products = products;

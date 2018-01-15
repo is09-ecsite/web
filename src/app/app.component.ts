@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { Authentication } from './struct/authentication';
 import { AuthenticationService } from './service/authentication.service';
@@ -14,10 +15,13 @@ export class AppComponent implements OnInit {
   authentication: boolean = false;
   authenticationServiceSubscribeId: string;
   headerClass: string = "top";
+  cartAddMessage: string = "";
+  isInitial: Boolean = true;
 
   constructor(
     private authenticationService: AuthenticationService,
-    private cartService: CartService
+    private cartService: CartService,
+    private router: Router
   ) { }
 
   ngOnInit() {
@@ -37,6 +41,20 @@ export class AppComponent implements OnInit {
     }
 
     checkHeaderPosition()
+
+    this.cartService.subscribe(c => {
+      if(this.isInitial) {
+        this.isInitial = false;
+      } else if (this.router.url != "/cart"){
+        this.cartAddMessage = "カートに商品が追加されました！"
+        setTimeout(
+          () => {
+            this.cartAddMessage = ""
+          }
+          ,2000
+        )
+      }
+    })
     
   }
 
