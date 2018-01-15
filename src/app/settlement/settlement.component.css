@@ -5,6 +5,25 @@
     padding       : 2rem 10%;
 }
 
+.host > :last-child {
+    align-items   : flex-end;
+    align-self    : flex-end;
+    display       : flex;
+    flex-direction: column;
+    margin-top    : 2rem;
+}
+
+.host > :last-child > :last-child {
+    align-items    : center;
+    display        : flex;
+    justify-content: center;
+    margin-top     : 1rem;
+}
+
+.host > :last-child button {
+    margin-left: 2rem;
+}
+
 app-list {
     background-color: #fafbfd;
     margin-bottom   : 80px;
@@ -55,37 +74,25 @@ app-list-item+app-list-item {
     flex-grow: 1;
 }
 
-.terms {
-    display       : flex;
-    flex-direction: column;
-}
 
 .terms > mat-card-title {
     text-align: center;
 }
 
-.terms > :last-child {
-    align-items   : flex-end;
-    align-self    : flex-end;
-    display       : flex;
-    flex-direction: column;
-    margin-top    : 2rem;
+.terms {
+    background-color: rgba(0, 0, 0, 0.03);
+    display         : flex;
+    flex-direction  : column;
+    padding         : 2rem;
 }
 
-.terms > :last-child > :last-child {
-    align-items    : center;
-    display        : flex;
-    justify-content: center;
-    margin-top     : 1rem;
-}
-
-.terms > :last-child button {
-    margin-left: 2rem;
+.terms p {
+    white-space: pre-wrap;
 }
 
 .total-price {
-    font-size: 1.2rem;
     border-bottom: 1px solid #666;
+    font-size    : 1.2rem;
 }
 
 .mat-form-field {
@@ -94,8 +101,8 @@ app-list-item+app-list-item {
 
 .mat-select-value {
     max-width: 100%;
-    width: auto;
-}  
+    width    : auto;
+}
 
 @media (max-width: 767px) {
     .cart-management-header > :first-child {
@@ -108,3 +115,4 @@ app-list-item+app-list-item {
         display: none;
     }
 }
+
