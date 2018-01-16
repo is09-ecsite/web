@@ -80,13 +80,15 @@ export class MyPageComponent implements OnInit {
       await new Promise(resolve => 
         this.selfService.getSelf()
           .subscribe(self => {
-            this.self = self;
-            this.balance = self.amount - (
-              this.structs
-                .map(x => x.totalFee)
-                .reduce((prev, next) => prev + next, 0)
-            )
-            resolve(self);
+            if (self) {
+              this.self = self;
+              this.balance = self.amount - (
+                this.structs
+                  .map(x => x.totalFee)
+                  .reduce((prev, next) => prev + next, 0)
+              )
+              resolve(self);
+            }
           })
       )
 
