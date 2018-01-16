@@ -1,37 +1,46 @@
 import { Component, OnInit } from '@angular/core';
+import { Router }            from '@angular/router';
 
-import { Product } from '../struct/product';
+import { Product }    from '../struct/product';
 import { Settlement } from '../struct/settlement';
-import { Self } from '../struct/self';
+import { Self }       from '../struct/self';
 import { Transition } from '../struct/transition';
 
 import { AuthenticationService } from '../service/authentication.service';
-import { ProductService } from "../service/product.service";
-import { SelfService } from "../service/self.service";
-import { SettlementService } from "../service/settlement.service";
+import { ProductService }        from "../service/product.service";
+import { SelfService }           from "../service/self.service";
+import { SettlementService }     from "../service/settlement.service";
 
 @Component({
-  selector: 'app-my-page',
+  selector   : 'app-my-page',
   templateUrl: './my-page.component.html',
-  styleUrls: ['./my-page.component.css']
+  styleUrls  : ['./my-page.component.css']
 })
 export class MyPageComponent implements OnInit {
 
-  private products   : Product[]
-  private settlements: Settlement[];
-  balance: number = 0;
-  self   : Self   = new Self();
-  structs         = [];
+  private products   : Product[]    = [];
+  private settlements: Settlement[] = [];
+  balance            : number       = 0;
+  self               : Self         = new Self();
+  structs                           = [];
 
   constructor(
     private authenticationService : AuthenticationService,
     private productService        : ProductService,
+    private router                : Router,
     private selfService           : SelfService,
     private settlementService     : SettlementService
   ) {  }
 
   ngOnInit(): void {
-    (async _ => {
+
+    if (!this.authenticationService.getAuthentication()) {
+      this.router.navigate(['/sign-in']);
+      return;
+    }
+
+
+    ;(async _ => {
       await new Promise(resolve => 
         this.settlementService.getSettlements()
           .subscribe(settlements => {
