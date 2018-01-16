@@ -60,8 +60,8 @@ export class SettlementComponent implements OnInit {
         });
       });
 
-      this.selfService.getSelf().subscribe(self => self && (this.self = self));
-      this.settlementService.getSettlements().subscribe(settlements => settlements && (this.prevSettlements = settlements));
+    this.selfService.getSelf().subscribe(self => self && (this.self = self));
+    this.settlementService.getSettlements().subscribe(settlements => settlements && (this.prevSettlements = settlements));
   }
 
   ngOnDestroy() {

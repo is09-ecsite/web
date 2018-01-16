@@ -2,8 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { Authentication } from './struct/authentication';
+import { Self } from './struct/self';
+
 import { AuthenticationService } from './service/authentication.service';
 import { CartService } from './service/cart.service';
+import { SelfService } from './service/self.service';
 
 @Component({
   selector: 'app-root',
@@ -12,16 +15,18 @@ import { CartService } from './service/cart.service';
 })
 
 export class AppComponent implements OnInit {
-  authentication: boolean = false;
+  authentication                  : boolean = false;
   authenticationServiceSubscribeId: string;
-  headerClass: string = "top";
-  cartAddMessage: string = "";
-  isInitial: Boolean = true;
+  cartAddMessage                  : string  = "";
+  headerClass                     : string  = "top";
+  isInitial                       : Boolean = true;
+  self                            : Self;
 
   constructor(
     private authenticationService: AuthenticationService,
-    private cartService: CartService,
-    private router: Router
+    private cartService          : CartService,
+    private router               : Router,
+    private selfService          : SelfService
   ) { }
 
   ngOnInit() {
@@ -29,8 +34,18 @@ export class AppComponent implements OnInit {
       this.authenticationService.subscribe(authentication => {
         console.log("app component authentication subscribe callback", authentication);
         this.authentication = authentication;
+
+        if (authentication) {
+          this.selfService
+            .getSelf()
+            .subscribe(self => {
+              this.self = self;
+          })
+        }
+
       })
     )
+
     let checkHeaderPosition = () => {
       if (window.pageYOffset > 64 && this.headerClass == "top")
         this.headerClass = "middle"
