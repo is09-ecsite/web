@@ -1,7 +1,7 @@
 import { Self } from "../struct/self";
 import { Settlement } from "../struct/settlement";
 
-export default (self: Self, settlements: Settlement[]) : number => 
+export default (self: Self = new Self(), settlements: Settlement[] = []) : number => 
     self.amount - settlements.map(settlement => 
         settlement.transitions
             .map(x => x.price * x.count)
