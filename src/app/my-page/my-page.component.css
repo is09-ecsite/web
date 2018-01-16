@@ -124,3 +124,29 @@ app-list-item+app-list-item {
     float : left;
     margin: 0 1rem;
 }
+
+@media (max-width: 767px) {
+    .container {
+        flex-direction : column;
+    }
+    .my-page-header {
+        display        : flex;
+        flex-direction : column;
+    }
+    .my-page-header > * {
+        width          : 100%;
+    }
+    .item-content {
+        flex-direction :  column;
+    }
+    .item-content > :first-child {
+        display        : none;
+    }
+    .item-content > :last-child {
+        flex-direction : row;
+        justify-content: space-between;
+        width          : 100%;
+        max-width      : initial;
+        min-width      : initial;
+    }
+}
