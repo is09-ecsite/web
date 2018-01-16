@@ -48,7 +48,7 @@ export class SignInComponent implements OnInit {
         if(authentication)
           this.router.navigate(["/"]);
         else
-          alert("ログイン失敗");
+          alert("ログインに失敗しました");
       });
     }
 }
