@@ -40,7 +40,7 @@ export class AppComponent implements OnInit {
             .getSelf()
             .subscribe(self => {
               this.self = self;
-          })
+            })
         }
 
       })
