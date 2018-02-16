@@ -5,6 +5,10 @@ EC-site Main Web
 
 IS09 Client side ecsite-web on Angular
 
+*Design*
+https://docs.google.com/presentation/d/1MmixWT5CCcy9a8eKKkBeJRC308xqtKj6TSVlIX00wbs/edit?usp=sharing
+
+
 Document
 https://angular.io/docs
 
